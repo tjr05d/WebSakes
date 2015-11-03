@@ -41,6 +41,7 @@ GEM
     autoprefixer-rails (6.0.3)
       execjs
       json
+    bcrypt (3.1.10)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -121,6 +122,7 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    puma (2.14.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -199,6 +201,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt
   better_errors
   bootstrap-sass
   byebug
@@ -210,6 +213,7 @@ DEPENDENCIES
   mini_backtrace
   minitest-reporters
   pg
+  puma
   rails
   rails_12factor
   sass
