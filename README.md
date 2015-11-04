@@ -5,7 +5,7 @@ description <br />
 instructions<br />
 
 ### Team
-* Timothy Teen  `CEO & Co-Founder`
+* Timothy Reen  `CEO & Co-Founder`
 * Stefanie Knapp `CCO & Co-Founder`
 * Henry Arbolaez `CTO & Co-Founder`<br><br>
 
