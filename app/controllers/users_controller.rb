@@ -1,21 +1,27 @@
 class UsersController < ApplicationController
 
-  def new
+  def show
+    @user = User.find(params[:id])
+    debugger
   end
 
-  def create
+  def new
+    @user = User.new
+  end
+
+def create
     @user = User.new(user_params)
     if @user.save
+      # from the aplication flash.each methods
       flash[:succes] = "Welcome"
       redirect_to @user
     else
-      flass[:danger] = "Faillll......"
       render 'new'
+    end
   end
 
 
   private
-
     def user_params
       params.require(:user).permit(:first_name, :last_name, :email,
                                    :password, :password_confirmation)
