@@ -11,4 +11,3 @@ instructions<br />
 
 ### License
 * Ruby version  => "4.2.4"
-instructions
