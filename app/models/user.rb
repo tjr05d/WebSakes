@@ -1,4 +1,10 @@
 class User < ActiveRecord::Base
+  #added in the associations between the user and other users
+  has_many :matches, :foreign_key => :first_selector_id, :dependent => :destroy
+  has-many :reverse_matches, :class_name => :Match, :foreign_key => :second_selector_id, :dependent => :destroy
+  
+  has_many :users, :through => :matches, :source => :second_selector
+
   attr_accessor :remember_token
   before_save { email.downcase! }
   validates :first_name, presence: true, length: { maximum: 50 }
