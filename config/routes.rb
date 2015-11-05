@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'matches/new'
+
+  get 'matches/create'
+
+  get 'matches/update'
+
   get 'sessions/new'
 
   root to:             'static_pages#home'
