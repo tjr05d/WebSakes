@@ -1,4 +1,4 @@
 class Match < ActiveRecord::Base
-  belongs_to :first_selector, :class_name => :User
-  belongs_to :second_selector, :class_name => :User
+  belongs_to :user, :foreign_key => :user_id, :class_name => "User"
+  belongs_to :connection, :foreign_key => :connection_id, :class_name => "User"
 end

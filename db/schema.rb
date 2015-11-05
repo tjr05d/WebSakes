@@ -13,12 +13,12 @@
 
 ActiveRecord::Schema.define(version: 20151105013207) do
 
-  create_table "matches", force: :cascade do |t|
-    t.integer  "first_selector"
-    t.integer  "second_selector"
-    t.boolean  "active"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+  create_table "matches", id: false, force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "connection_id"
+    t.boolean  "active",        default: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
 
   create_table "users", force: :cascade do |t|
