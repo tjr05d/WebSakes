@@ -1,7 +1,7 @@
 class MatchesController < ApplicationController
-  def new
-    @match = Match.new
-  end
+  # def new
+  #   @matches = Match.all
+  # end
 
   def create
     #when the first person decides to connect and the second oerson has not
@@ -32,6 +32,7 @@ class MatchesController < ApplicationController
       redirect_to @user
     else
       flash[:alert] = "Oh No!"
+    end
   end
 
   def user_clicks_button_to_connect
@@ -41,9 +42,9 @@ class MatchesController < ApplicationController
     @matches = Match.where(user_id: random_user.id, connection_id: user.id)
 
     if @matches.exist?
-      update
+      render action: update
     else
-      create
+      render action: create
     end
 
   end

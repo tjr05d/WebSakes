@@ -22,6 +22,9 @@ class UsersController < ApplicationController
     end
   end
 
+  def connection_match
+    @connection = Match.where(connection_id: @user.id)
+  end
 
   private
     def user_params
