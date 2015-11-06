@@ -32,6 +32,7 @@ class MatchesController < ApplicationController
       redirect_to @user
     else
       flash[:alert] = "Oh No!"
+    end
   end
 
   def user_clicks_button_to_connect

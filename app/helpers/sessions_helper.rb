@@ -24,18 +24,18 @@ module SessionsHelper
   #return the current logged-in user (if-any)
   def current_user
     #if current user close the session the user will go away
-      # @current_user ||= User.find_by(id: sessions[:user_id])
+      # @current_user ||= User.find_by(id: session[:user_id])
 
      #if session[:user_id] is not nil, if exit we do this
-    if session[:user_id]
-      @current_user ||= User.find_by(id: sessions[:user_id])
+    if (user_id = session[:user_id])
+      @current_user ||= User.find_by(id: user_id)
 
     # else if the user close the browser session[:user_id] = nil
     # so it check cookies.signed[:user_id] != nil, so there
     # is a persistent session
-    elsif cookies.signed[:user_id]
+    elsif (user_id = cookies.signed[:user_id])
       # will find user by (:id cookies.signed[:user_id])
-      user = User.find_by(id: cookies.signed[:user_id])
+      user = User.find_by(id: user_id)
       # if user is true and is authenticated? ????
       # log_in user
       # @current_user = user
@@ -51,22 +51,21 @@ module SessionsHelper
     !current_user.nil?
   end
 
-  # if we call @current_user before redirecting is a problem
-  def log_out
-    forgot(@current_user)
-    session.delete(:user_id)
-    @current_user = nil
-  end
-
   # we only are allow to log_out current session
   # to forget the information,
   # of remember cookies, persistent session
   # forget a persistent session
-  def forgot(user)
+  def forget(user)
     user.forget
     cookies.delete(:user_id)
     cookies.delete(:remember_token)
   end
 
+  # if we call @current_user before redirecting is a problem
+  def log_out
+    forget(current_user)
+    session.delete(:user_id)
+    @current_user = nil
+  end
 
 end

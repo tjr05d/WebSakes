@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
   end
 
   #Return the random token (SecureRandom.urlsafe_base64)
-  def User.new_toke
+  def User.new_token
     SecureRandom.urlsafe_base64
   end
 
@@ -35,19 +35,22 @@ class User < ActiveRecord::Base
     # was generated with has_secure_password
     # So we need to put attr_accessors the remmebr_token
     self.remember_token = User.new_token
-    update_attribute(:remember_token, User.digest(remember_token))
+    update_attribute(:remember_digest, User.digest(remember_token))
   end
 
 
-  # look into the has_secure_password authenticate source code
+   # Forgets a user.
+  def forget
+    update_attribute(:remember_digest, nil)
+  end
+
+   # look into the has_secure_password authenticate source code
   # Return true if the given token matches the digest
   def authenticated?(remember_token)
     # This (if logic)will prevent when two user logged_in in two window and close them
     # both, then the remember_digest is nil and throw an error, so this prevent that
-    if remember_digest.nil?
-      return false
-    end
-
+    return false if remember_digest.nil?
      BCrypt::Password.new(remember_digest).is_password?(remember_token)
   end
+
 end
