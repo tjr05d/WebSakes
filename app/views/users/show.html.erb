@@ -9,9 +9,15 @@
          <%= @user.last_name%>
         </h1>
         <p>
+        <h3> Matches </h3>
+        <%= @user.matches.first.connection.first_name %><br>
+        <%= connection_match.first.user.first_name %><br>
+        <h3> Business Cards </h3>
+        <%= random_user.first_name %>
+        #button to call(check mark 'yes') user_clicks_button_to_connect
+        
 
-        <%= @user.matches.first.connection.first_name %>
-        <%= connection_match.first.user.first_name %> 
+        #no button, no button, refresh the business card element
      </section>
    </aside
  </div>

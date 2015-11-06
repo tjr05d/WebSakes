@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
 
   def connection_match
-    Match.where(connection_id: @user.id) 
+    Match.where(connection_id: @user.id)
   end
 
   helper_method :connection_match
@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
 #random_user is a method that selects a random user from the database to
 #present to the current user
     def random_user
-    User.order("RANDOM()").first
+      User.order("RANDOM()").first
     end
 #the helper method allows the method to be used in multiple places
     helper_method :random_user
