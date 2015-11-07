@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
 
   def connection_match
-    Match.where(connection_id: @user.id) 
+    Match.where(connection_id: @user.id)
   end
 
   helper_method :connection_match
