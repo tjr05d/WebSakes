@@ -21,16 +21,17 @@
 <!--     </div>
   </div>
 </nav> -->
-<nav>
-  <ul>
-    <li>
+
+ <nav>
+  <div class="toggleNav">
+    <div class="toggleNavButton"></div>
+  </div>
+
+  <div id="subnav">
+    <ul>
       <li><%= link_to "Home", root_path %></li>
-    </li>
-    <li>
       <li><%= link_to "About", about_path %></li>
-    </li>
-    <li>
-       <li><%= link_to "Contact", contact_path %></li>
-    </li>
-  </ul>
+      <li><%= link_to "Contact", contact_path %></li>
+    </ul>
+  </div>
 </nav>

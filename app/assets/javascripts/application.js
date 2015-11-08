@@ -15,3 +15,10 @@
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
+
+$(document).on('ready page:load', function () {
+  $(".toggleNav").click(function () {
+      $("#subnav").toggleClass("active");
+      $(".toggleNavButton").toggleClass("active");
+   });
+});
