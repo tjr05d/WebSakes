@@ -1,0 +1,23 @@
+<section class="elSign">
+  <fieldset>
+    <legend>Sign In</legend>
+
+    <%= form_for(:session, url: login_path) do |f| %>
+
+      <%= f.label :email, class: "vhide"%>
+      <%= f.email_field :email, id: "email" ,placeholder: "Email" %>
+
+      <%= f.label :password, class: "vhide" %>
+      <%= f.password_field :password, id: "password", placeholder: "Password" %>
+
+      <%= f.label :remember_me, class: 'checkbox inline' do %>
+        <%= f.check_box :remember_me, id: "remember",class: "vhide" %>
+         <label for="remember">
+          <i></i><p id="remember">Remember me</p>
+        </label >
+        <% end %>
+      <%= f.submit "Sign in", class: "btn btn-primary signin", class: "signin"%>
+    <% end %>
+    <%= link_to "Sign up", signup_path %>
+  </fieldset>
+</section>

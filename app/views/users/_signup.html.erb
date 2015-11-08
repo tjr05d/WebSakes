@@ -1,24 +1,31 @@
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@user) do |f| %>
-      <%= render 'shared/error_messages' %>
+<section class="elForm">
+  <div class="container1">
+    <div class="box" id="sign-up">
+    <%= link_to "Home", root_path, class: "back-arrow" %>
+      <div class="form">
+        <h2 class="title">Sign up now</h2>
+          <%= form_for(@user) do |f| %>
+            <%= render 'shared/error_messages' %>
 
-      <%= f.label :first_name %>
-      <%= f.text_field :first_name, class: 'form-control' %>
+            <%= f.label :first_name %>
+            <%= f.text_field :first_name, :placeholder => "First name" %>
 
-      <%= f.label :last_name %>
-      <%= f.text_field :last_name, class: 'form-control' %>
 
-      <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
+            <%= f.label :last_name %>
+            <%= f.text_field :last_name, :placeholder => "Last name" %>
 
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
+            <%= f.label :email %>
+            <%= f.email_field :email, :placeholder => "Email"  %>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation, class: 'form-control' %>
+            <%= f.label :password %>
+            <%= f.password_field :password, :placeholder => "Password" %>
 
-      <%= f.submit "Create my account", class: "btn btn-primary" %>
-    <% end %>
+            <%= f.label :password_confirmation, "Password Confirmation" %>
+            <%= f.password_field :password_confirmation, :placeholder => "Password Confirmation" %>
+
+            <%= f.submit "Create my account", class: "btn btn-primary" %>
+          <%end%>
+      </div>
+    </div>
   </div>
-</div>
+</section>
