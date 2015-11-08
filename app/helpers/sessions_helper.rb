@@ -48,7 +48,7 @@ module SessionsHelper
 
   # return true if user is logged in
   def logged_in?
-    !current_user.nil?
+    current_user == true
   end
 
   # we only are allow to log_out current session
