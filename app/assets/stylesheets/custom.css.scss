@@ -1,6 +1,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body {
+  font-family: 'Arvo', serif;
+}
 
 /* universal */
 
@@ -75,10 +78,8 @@ body {
 h1.team-h1 {
   text-align: center;
   left: 40%;
-  font-family: georgia;
-  font-style: italic;
   padding: 0px 20px;
-  color: #222;
+  color: #fff;
 }
 
 
@@ -95,7 +96,7 @@ h1.team-h1 {
 }
 
 .team-member {
-  width: 16%;
+  width: 18%;
   float: left;
   text-align: center;
   margin-right: 5%;
@@ -121,6 +122,11 @@ h1.team-h1 {
   text-decoration: none;
 }
 
+.team-member a:hover {
+    color:#fff;
+  }
+
+
 .team-photo {
   border-radius: 50%;
   text-align: center;
@@ -133,6 +139,7 @@ h1.team-h1 {
 
 .team-photo:hover {
   transform: scale(0.9);
+  border: 5px solid white;
 }
 
 

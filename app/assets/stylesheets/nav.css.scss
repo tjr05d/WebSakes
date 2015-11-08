@@ -78,6 +78,7 @@ nav{
   transition-duration: 0.2s;
   overflow: hidden;
   height: 0px;
+  text-decoration: none;
 
   &.active{
     border-bottom: 5px solid darken(tomato, 15%);
@@ -98,6 +99,7 @@ nav{
 
       a{
         color: white;
+        text-decoration: none;
       }
 
       &:hover{
