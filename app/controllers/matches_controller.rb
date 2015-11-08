@@ -1,8 +1,6 @@
 class MatchesController < ApplicationController
-  # def new
-  #   @matches = Match.all
-  # end
 
+@connection = randomize_users[0]
   def create
     #when the first person decides to connect and the second oerson has not
     #selected to connect yet, a new pending match will be created in the
@@ -12,7 +10,7 @@ class MatchesController < ApplicationController
     @match.user = current_user.id
     #the id  person that they select will be set to the random_user is
     #which is the id of the person that is on the screen
-    @match.connection = random_user.id
+    @match.connection = @connection.id
 
     if @match.save
       # from the aplication flash.each methods
@@ -39,9 +37,10 @@ class MatchesController < ApplicationController
     #when a user clicks the button to connect with a user, we query the matches
     #table to see if the connection alrady exists, if it does we turn the
     #active value to true, if does not exist, we create the relationship
-    @matches = Match.where(user_id: random_user.id, connection_id: user.id)
+    @matches = nil
+    @matches = Match.where(user_id: @connection.id, connection_id: current_user.id)
 
-    if @matches.exist?
+    if @matches == true
       render action: update
     else
       render action: create

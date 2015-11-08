@@ -35,20 +35,24 @@ module SessionsHelper
     # is a persistent session
     elsif (user_id = cookies.signed[:user_id])
       # will find user by (:id cookies.signed[:user_id])
+
       user = User.find_by(id: user_id)
+
       # if user is true and is authenticated? ????
       # log_in user
       # @current_user = user
       if user && user.authenticated?(cookies[:remember_token])
         log_in user
         @current_user = user
+
+
       end
     end
   end
 
   # return true if user is logged in
   def logged_in?
-    !current_user.nil?
+    current_user == true
   end
 
   # we only are allow to log_out current session

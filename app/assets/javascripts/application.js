@@ -15,3 +15,13 @@
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
+
+// attempts at creating a click event to call method in the application controller 
+// $(document).ready( function(){
+//
+//   $('#yes-button').click( function() {
+//
+//     console.log("yes button clicked");
+//   })
+//
+//   });
