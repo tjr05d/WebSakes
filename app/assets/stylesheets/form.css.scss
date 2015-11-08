@@ -1,0 +1,49 @@
+
+$background: #FBFBFB;
+$blue: #3498db;
+
+.container1 {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #2c3e50;
+  background-size: cover;
+  margin-top: 4em;
+  .box#sign-up {
+    box-sizing: border-box;
+    width: 500px;
+    margin: 40px auto;
+    background: $background;
+    border-radius: 2px;
+    box-shadow: 0 1px 20px 5px rgba(0,0,0,0.4);
+    padding: 15px 35px;
+      .back-arrow {
+        color: #777;
+    }
+      .title {
+        font-weight: bold;
+        font-size: 2em;
+        color: #333;
+        text-align: center;
+      }
+    .form {
+      input {
+        outline: 0;
+        border: 1px solid #CCC;
+        box-sizing: border-box;
+        padding: 8px;
+        color: #222;
+        border-radius: 4px;
+        width: 100%;
+        margin: 5px 0;
+        font-weight: 600;
+        &::-webkit-input-placeholder {
+          color: #AAA;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
