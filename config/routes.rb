@@ -5,10 +5,6 @@ Rails.application.routes.draw do
 
   get 'matches/update'
 
-  get 'home/index'
-
-  get 'home/profile'
-
   get 'sessions/new'
 
   root to:             'static_pages#home'
