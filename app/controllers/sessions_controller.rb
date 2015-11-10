@@ -10,7 +10,6 @@ class SessionsController < ApplicationController
       #log user and redirect
       #call the method log_in in the Session helper
       log_in(user) # in the Session helper
-      randomize_users
       # we want to check if the checkbox of remember_me = '1'
       # if is, we want to remember(user) else forget(user
       params[:session][:remember_me] ? remember(user) : forget(user)
