@@ -53,6 +53,10 @@ class User < ActiveRecord::Base
      BCrypt::Password.new(remember_digest).is_password?(remember_token)
   end
 
+  def self.random_connection(user_id)
+    where.not(id: user_id).shuffle.first
+  end
+
 
 
 

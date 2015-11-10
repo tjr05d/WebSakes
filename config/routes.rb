@@ -5,9 +5,13 @@ Rails.application.routes.draw do
 
   get 'matches/update'
 
+  get 'matches/show'
+
   get 'sessions/new'
 
-  post 'users/:id' => 'application#user_clicks_button_to_connect', as: 'user_yes'
+  post 'matches/:id' => 'matches#user_clicks_button_to_connect', as: 'user_yes' do
+    root to: 'pages#index'
+  end
 
   root to:             'static_pages#home'
   get    'help'    =>  'static_pages#help'
