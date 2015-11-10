@@ -1,35 +1,58 @@
-<%= provide(:title, current_user.first_name )%>
- <div class="row">
-   <aside class="col-md-4">
-     <section class="user_info">
-       <h1>
-         <%= current_user.first_name%>
-        </h1>
-        <h1>
-         <%= current_user.last_name%>
-        </h1>
-        <p>
+<%= provide(:title, current_user.first_name)%>
+
+<h1>Swipecard Test</h1>
+      <section>
+        <div class="cardcontainer list">
+          <ul class="cardlist">
+
+          <section style="width:100%; height: 100%; background-color:red;">
+            <%= gravatar_for @potential_connection, id: "gravatar" %>
+            <div>
+              <%= @potential_connection.first_name%><%= @potential_connection.last_name%>
+            </div>
+
+          </section>
+          </ul>
+            <button class="but-nope"><%= button_to "No",
+                                      matches_show_path%></button>
+            <button class="but-yay"><%= button_to "Yes",
+                                      user_yes_path(@potential_connection.id),
+                                   :method => "user_clicks_button_to_connect"%>
+            </button>
+            <span id="counter"></span>
+          </div>
+          <ul class="cardlist" id="results">
+          </ul>
+        </section>
+
+
+
+      <!--   <p>
         <h3> Matches </h3>
-        <% @connecton_name= current_user.matches.first %><br>
-        <% if @connection_name.nil? %>
+        <%# @connecton_name= current_user.matches.first %><br>
+        <%# if @connection_name.nil? %>
           <p> No matches yet </p>
-          <%else %>
-          <%= @connection_name.connection.first_name %>
-          <% end %>
-        <% @other_connection_name = connection_match.first %>
-        <% if @other_connection_name.nil? %>
+          <%#else %>
+          <%#= @connection_name.connection.first_name %>
+          <%# end %>
+        <%# @other_connection_name = connection_match.first %>
+        <%# if @other_connection_name.nil? %>
           <p> No matches yet </p>
-          <%else %>
-          <%= @other_connection_name.user.first_name %>
-          <% end %><br>
+          <%#else %>
+          <%#= @other_connection_name.user.first_name %>
+          <%# end %><br>
 
         <h3> Business Cards </h3>
 
 
-        <%= @potential_connection.first_name%>
+        <%#= @potential_connection.first_name%>
 
 
-        <%= button_to "Yes", user_yes_path(@potential_connection.id), :method => "user_clicks_button_to_connect"%>
-        <%= button_to "No", matches_show_path%>
+        <%#= button_to "Yes", user_yes_path(@potential_connection.id), :method => "user_clicks_button_to_connect"%>
+        <%#= button_to "No", matches_show_path%>
 
       </p>
+    </section>
+  </aside>
+</div>
+ -->
