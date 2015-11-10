@@ -10,7 +10,7 @@
         </h1>
         <p>
         <h3> Matches </h3>
-        <% @connecton_name= current_user.matches.first %><br>
+        <% @connecton_name = current_user.matches.first %><br>
         <% if @connection_name.nil? %>
           <p> No matches yet </p>
           <%else %>
@@ -24,30 +24,13 @@
           <% end %><br>
 
         <h3> Business Cards </h3>
-<<<<<<< HEAD
-        <%= randomize_users[i].first_name%>
-
+        <%= Match.first_name%>
 
         <p>
         <%= button_to "Yes", user_yes_path, :method => "user_clicks_button_to_connect"%>
       </p>
-=======
-        <%= random_user.first_name %>
         #button to call(check mark 'yes') user_clicks_button_to_connect
 
-
-        <%= @user.matches.first.connection.first_name %>
-        <%= connection_match.first.user.first_name %>
-
->>>>>>> 67cfd9cab6db10a5471b29d07690905cd622608f
-
-        #no button, no button, refresh the business card element
-
      </section>
-<<<<<<< HEAD
    </aside>
  </div>
-=======
-   </aside
-
->>>>>>> 67cfd9cab6db10a5471b29d07690905cd622608f
