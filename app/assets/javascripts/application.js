@@ -16,8 +16,8 @@
 //= require turbolinks
 //= require_tree .
 
-<<<<<<< HEAD
-// attempts at creating a click event to call method in the application controller 
+
+// attempts at creating a click event to call method in the application controller
 // $(document).ready( function(){
 //
 //   $('#yes-button').click( function() {
@@ -26,11 +26,11 @@
 //   })
 //
 //   });
-=======
+
 $(document).on('ready page:load', function () {
   $(".toggleNav").click(function () {
       $("#subnav").toggleClass("active");
       $(".toggleNavButton").toggleClass("active");
    });
 });
->>>>>>> 67cfd9cab6db10a5471b29d07690905cd622608f
+

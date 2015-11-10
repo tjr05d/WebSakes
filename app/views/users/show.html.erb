@@ -1,0 +1,37 @@
+
+<%= provide(:title, current_user.first_name )%>
+ <div class="row">
+   <aside class="col-md-4">
+     <section class="user_info">
+       <h1>
+         <%= current_user.first_name%>
+        </h1>
+        <h1>
+         <%= current_user.last_name%>
+        </h1>
+        <p>
+        <h3> Matches </h3>
+        <% @connecton_name = current_user.matches.first %><br>
+        <% if @connection_name.nil? %>
+          <p> No matches yet </p>
+          <%else %>
+          <%= @connection_name.connection.first_name %>
+          <% end %>
+        <% @other_connection_name = connection_match.first %>
+        <% if @other_connection_name.nil? %>
+          <p> No matches yet </p>
+          <%else %>
+          <%= @other_connection_name.user.first_name %>
+          <% end %><br>
+
+        <h3> Business Cards </h3>
+        <%= Match.first_name%>
+
+        <p>
+        <%= button_to "Yes", user_yes_path, :method => "user_clicks_button_to_connect"%>
+      </p>
+        #button to call(check mark 'yes') user_clicks_button_to_connect
+
+     </section>
+   </aside>
+ </div>
