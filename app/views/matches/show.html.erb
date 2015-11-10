@@ -1,6 +1,6 @@
 <%= provide(:title, current_user.first_name )%>
  <div class="row">
-   <!-- <aside class="col-md-4">
+   <aside class="col-md-4">
      <section class="user_info">
        <h1>
          <%= current_user.first_name%>
@@ -21,14 +21,15 @@
           <p> No matches yet </p>
           <%else %>
           <%= @other_connection_name.user.first_name %>
-          <% end %><br> -->
+          <% end %><br>
 
         <h3> Business Cards </h3>
 
 
         <%= @potential_connection.first_name%>
 
-        <o><!--user_yes_path(@potential_connection.id) -->
+
         <%= button_to "Yes", user_yes_path(@potential_connection.id), :method => "user_clicks_button_to_connect"%>
+        <%= button_to "No", matches_show_path%>
 
       </p>
