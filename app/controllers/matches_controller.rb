@@ -59,7 +59,6 @@ class MatchesController < ApplicationController
       update
 
     end
-
     redirect_to matches_show_path
   end
 
