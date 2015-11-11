@@ -1,4 +1,10 @@
 class EventsController < ApplicationController
-  def index
+  def new
+  end
+
+  def create
+    render plain: params[:article].inspect
   end
 end
+
+
