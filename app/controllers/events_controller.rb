@@ -3,7 +3,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    render plain: params[:article].inspect
+    render plain: params[:events].inspect
   end
 end
 
