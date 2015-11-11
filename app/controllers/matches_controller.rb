@@ -61,9 +61,4 @@ class MatchesController < ApplicationController
     end
     redirect_to matches_show_path
   end
-
-  # def user_clicks_no
-  #   redirect_to matches_show_path
-  # end
-
 end
