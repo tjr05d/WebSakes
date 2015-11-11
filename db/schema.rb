@@ -29,9 +29,9 @@ ActiveRecord::Schema.define(version: 20151111043900) do
     t.datetime "updated_at",      null: false
     t.string   "password_digest"
     t.string   "remember_digest"
+    t.integer  "contact_number"
     t.string   "twitter"
     t.string   "linkedin"
-    t.integer  "contact_number"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
