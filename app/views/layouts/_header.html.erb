@@ -1,6 +1,6 @@
 <nav id="primary_nav">
   <a href="#" id="mobile_nav">&#9776;</a>
-  <ul>
+    <ul>
       <% if logged_in?%>
         <li><%= link_to "Index", matches_show_path %></li>
         <li><%= link_to "Contact", contact_path %></li>
@@ -11,5 +11,5 @@
       <%else%>
         <li><%= link_to "Log in", root_path %></li>
       <% end %>
-  </ul>
+    </ul>
 </nav>
