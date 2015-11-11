@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
   before_action :current_user
+  before_action :logged_in_user, only: [:edit, :update]
+  before_action :correct_user,   only: [:edit, :update]
+
+
 
   def index
   end
@@ -42,11 +46,33 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    User.find(params[:id]).destroy
+    flash[:success] = "Sorry, to see you go!"
+    redirect_to root_path
+  end
+
 
   private
     def user_params
       params.require(:user).permit(:first_name, :last_name, :email,
                                     :password, :password_confirmation,
                                     :contact_number, :twitter, :linkedin)
+    end
+
+   # Before filters
+
+    # Confirms a logged-in user.
+    def logged_in_user
+      unless logged_in?
+        flash[:danger] = "Please log in."
+        redirect_to login_url
+      end
+    end
+
+    # Confirms the correct user.
+    def correct_user
+      @user = User.find(params[:id])
+      redirect_to(matches_show_path) unless @user == current_user
     end
 end

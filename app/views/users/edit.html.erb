@@ -34,6 +34,8 @@
             <%= f.submit "Update Profile", class: "btn btn-primary" %>
           <%end%>
       </div>
+      <%= link_to "delete", current_user, method: :delete,
+                                  data: { confirm: "You sure?" } %>
     </div>
   </div>
 </section>

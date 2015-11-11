@@ -22,7 +22,8 @@ class SessionsController < ApplicationController
 
   # Sign out the the current user
   def destroy
-    log_out if logged_in?# in the Session helper
+    # log_out if logged_in?# in the Session helper
+    log_out
     redirect_to root_url
   end
 end
