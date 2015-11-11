@@ -10,6 +10,12 @@ class User < ActiveRecord::Base
   before_save { email.downcase! }
   validates :first_name, presence: true, length: { maximum: 50 }
   validates :last_name, presence: true, length: { maximum: 50 }
+
+  VALID_TWITTER_and_LINKEDIN_REGEX = /\A(?=.*[a-z])[a-z\d]+\Z/i
+  validates :twitter, :linkedin, presence: true ,
+                      format: { with: VALID_TWITTER_and_LINKEDIN_REGEX },
+                      length: { maximum: 50 }
+
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX },
@@ -61,7 +67,7 @@ class User < ActiveRecord::Base
     end
     @already_connected_id
   end
-#a method that selects a random person that is not you, and that you haven't connected with yet. 
+#a method that selects a random person that is not you, and that you haven't connected with yet.
   def self.random_connection(matched_already)
     where.not(id: matched_already).shuffle.first
   end

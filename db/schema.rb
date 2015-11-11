@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151105013207) do
+ActiveRecord::Schema.define(version: 20151111043900) do
 
   create_table "matches", force: :cascade do |t|
     t.integer  "user_id"
@@ -29,6 +29,9 @@ ActiveRecord::Schema.define(version: 20151105013207) do
     t.datetime "updated_at",      null: false
     t.string   "password_digest"
     t.string   "remember_digest"
+    t.string   "contact_number"
+    t.string   "twitter"
+    t.string   "linkedin"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
