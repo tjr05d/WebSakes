@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'events/index'
+
   get 'match' => 'matches#losMatch'
 
   get 'matches/new'
