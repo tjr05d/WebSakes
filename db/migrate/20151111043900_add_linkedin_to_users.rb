@@ -1,5 +1,5 @@
 class AddLinkedinToUsers < ActiveRecord::Migration
   def change
-    add_column :users, :linkedin
+    add_column :users, :linkedin, :string
   end
 end

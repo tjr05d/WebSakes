@@ -58,7 +58,11 @@ class User < ActiveRecord::Base
   def self.take_matches_out(user_id)
     @already_connected_id = [user_id.id]
     find_by(id: user_id).matches.each do |match|
-    @already_connected_id << match.connection_id
+      @already_connected_id << match.connection_id
+    end
+
+    Match.where(connection_id: user_id.id, active: true).each do |match|
+      @already_connected_id << match.user_id
     end
     @already_connected_id
   end
