@@ -76,4 +76,8 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.assets.compile = false #To stop run time assets precompile in production.
+  config.assets.digest = true  #To access assets which are precompiled and in their names have appendend digets by rails
+  config.cache_classes = true #allowing caching assets
 end
