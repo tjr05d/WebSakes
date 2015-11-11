@@ -6,6 +6,7 @@ module SessionsHelper
     session[:user_id] = user.id
   end
 
+
   # remember a user in the session, by calling the
   # remember method in the user model(user.remember)
   def remember(user)
@@ -52,7 +53,7 @@ module SessionsHelper
 
   # return true if user is logged in
   def logged_in?
-    current_user = true
+    !current_user.nil?
   end
 
   # we only are allow to log_out current session

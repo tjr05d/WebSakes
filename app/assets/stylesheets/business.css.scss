@@ -1,0 +1,87 @@
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.business {
+  float: left;
+}
+
+#back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 230px;
+  width: 350px;
+  background: white;
+  -moz-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  -moz-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  -moz-box-shadow: 0 5px 30px rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 0 5px 30px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.7);
+  padding: 35px 15px;
+  font-size: 2em;
+  text-align: justify;
+}
+
+#front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 350px;
+  height: 230px;
+  background: #ED5F55;
+  padding-top: 1px;
+  -moz-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  -moz-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);
+}
+#front h1 {
+  text-align: center;
+  color: white;
+  margin-top: 45px;
+  text-shadow: 0 1px 0 #326773;
+}
+
+#card {
+  margin: 30px auto 0;
+  position: relative;
+  width: 400px;
+  height: 230px;
+  cursor: pointer;
+  -moz-perspective: 600px;
+  -webkit-perspective: 600px;
+  perspective: 600px;
+}
+#card:hover #front {
+  -moz-transform: rotateY(50deg);
+  -webkit-transform: rotateY(50deg);
+  transform: rotateY(50deg);
+}
+#card:hover #back {
+  -moz-transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+}

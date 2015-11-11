@@ -36,7 +36,7 @@ class MatchesController < ApplicationController
 
   def update
     @match.first.active = true
-    if @match.first.save 
+    if @match.first.save
       flash[:success] = "You have a match!"
     else
       flash[:alert] = "Oh no"
