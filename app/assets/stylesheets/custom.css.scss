@@ -142,7 +142,32 @@ h1.team-h1 {
   border: 5px solid white;
 }
 
+#hover1 {
+  display: none;
+}
+.team-photo:hover + #hover1 {
+   display: block;
+   color:green;
+   font-size: 1.8rem;
+}
 
+#hover2 {
+  display: none;
+}
+.team-photo:hover + #hover2 {
+   display: block;
+   color:pink;
+   font-size: 1.8rem;
+}
+
+#hover3 {
+  display: none;
+}
+.team-photo:hover + #hover3 {
+   display: block;
+   color: tomato;
+   font-size: 1.8rem;
+}
 /* code for phone layout */
 @media (min-width:650px){
   .team-member {

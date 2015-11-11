@@ -1,7 +1,7 @@
 <section class="elForm">
   <div class="container1">
     <div class="box" id="sign-up">
-    <%= link_to "Home", root_path, class: "back-arrow" %>
+    <%= link_to "Home", matches_show_path, class: "back-arrow" %>
       <div class="form">
         <h2 class="title">Edit User</h2>
           <%= form_for(@user) do |f| %>
@@ -33,9 +33,10 @@
 
             <%= f.submit "Update Profile", class: "btn btn-primary" %>
           <%end%>
-      </div>
-      <%= link_to "delete", current_user, method: :delete,
+           <%= link_to "Delete User", current_user, class: "btn btn-danger", :style  =>"width:100%;", method: :delete,
                                   data: { confirm: "You sure?" } %>
+      </div>
+
     </div>
   </div>
 </section>

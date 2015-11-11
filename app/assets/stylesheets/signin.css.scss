@@ -135,6 +135,24 @@ body .elSign {
       opacity: 1;
     }
   }
+  .signout {
+    font-size: 1.2em;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    color: $bg;
+    padding: 0.5em 2em;
+    margin: 2em 0 0;
+    vertical-align: middle;
+    display: block;
+    width: 100%;
+    border-radius: 3px;
+    opacity: 0.8;
+    transition: all 0.2s ease;
+    &:hover {
+      opacity: 1;
+    }
+  }
   .vhide {
 
     opacity: 0;

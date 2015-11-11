@@ -73,6 +73,7 @@ module SessionsHelper
 
   # if we call @current_user before redirecting is a problem
   def log_out
+    flash[:warning] =  "Bye #{current_user.first_name} 😔 😔 😔 😔"
     forget(current_user)
     session.delete(:user_id)
     @current_user = nil

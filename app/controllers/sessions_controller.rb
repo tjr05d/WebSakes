@@ -14,6 +14,7 @@ class SessionsController < ApplicationController
       # if is, we want to remember(user) else forget(user
       params[:session][:remember_me] ? remember(user) : forget(user)
         redirect_to matches_show_path
+      flash[:success] =  "Weclome #{current_user.first_name}  😃  😃  😃  😃 "
     else
       flash.now[:danger] = "Invalid Email/Password combination "
       render 'new'

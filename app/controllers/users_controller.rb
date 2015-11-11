@@ -23,7 +23,7 @@ class UsersController < ApplicationController
     if @user.save
       log_in @user
       # from the aplication flash.each methods
-      flash[:success] = "Welcome"
+      flash[:success] =  "Weclome #{current_user.first_name}  😃  😃  😃  😃 "
       # after create go to the matches_show_path
       redirect_to matches_show_path
     else
@@ -48,7 +48,7 @@ class UsersController < ApplicationController
 
   def destroy
     User.find(params[:id]).destroy
-    flash[:success] = "Sorry, to see you go!"
+    flash[:danger] = "Sorry, to see you go! 😱 😥 😭 😭"
     redirect_to root_path
   end
 
