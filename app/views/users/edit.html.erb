@@ -3,7 +3,7 @@
     <div class="box" id="sign-up">
     <%= link_to "Home", root_path, class: "back-arrow" %>
       <div class="form">
-        <h2 class="title">Sign up now</h2>
+        <h2 class="title">Edit User</h2>
           <%= form_for(@user) do |f| %>
             <%= render 'shared/error_messages' %>
 
@@ -16,13 +16,22 @@
             <%= f.label :email %>
             <%= f.email_field :email, :placeholder => "Email"  %>
 
+            <%= f.label :contact_number %>
+            <%= f.text_field :contact_number, :placeholder => "Your phone number"%>
+
+            <%= f.label :twitter %>
+            <%= f.text_field :twitter, :placeholder => "Twitter Username"  %>
+
+            <%= f.label :linkedin%>
+            <%= f.text_field :linkedin, :placeholder => "Linkedin Username"  %>
+
             <%= f.label :password %>
             <%= f.password_field :password, :placeholder => "Password" %>
 
             <%= f.label :password_confirmation, "Password Confirmation" %>
             <%= f.password_field :password_confirmation, :placeholder => "Password Confirmation" %>
 
-            <%= f.submit "Create my account", class: "btn btn-primary" %>
+            <%= f.submit "Update Profile", class: "btn btn-primary" %>
           <%end%>
       </div>
     </div>

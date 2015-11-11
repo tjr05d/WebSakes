@@ -17,12 +17,28 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      log_in @user
       # from the aplication flash.each methods
       flash[:success] = "Welcome"
       # after create go to the matches_show_path
       redirect_to matches_show_path
     else
       render 'new'
+    end
+  end
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
+   def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(user_params)
+      flash[:success] = "Profile updated"
+      redirect_to matches_show_path
+      # Handle a successful update.
+    else
+      render 'edit'
     end
   end
 
