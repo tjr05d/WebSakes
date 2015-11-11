@@ -1,0 +1,9 @@
+<h1>Matches</h1>
+<div class="container text-center">
+  Current User have <%= current_user.matches.count%> <br>
+
+  <% current_user.matches.each do |match| %>
+  <%= match.connection.first_name%>
+
+  <%end%>
+</div>

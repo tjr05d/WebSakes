@@ -6,9 +6,7 @@ class UsersController < ApplicationController
 
 
   def show
-
     @user = User.find(params[:id])
-
   end
 
 
@@ -21,7 +19,8 @@ class UsersController < ApplicationController
     if @user.save
       # from the aplication flash.each methods
       flash[:success] = "Welcome"
-      redirect_to @user
+      # after create go to the matches_show_path
+      redirect_to matches_show_path
     else
       render 'new'
     end

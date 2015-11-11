@@ -8,7 +8,7 @@
           <section style="width:100%; height: 100%; background-color:red;">
             <%= gravatar_for @potential_connection%>
             <div>
-              <%= @potential_connection.first_name%><%= @potential_connection.last_name%>
+              <%= link_to @potential_connection.first_name%><%= @potential_connection.last_name%>
             </div>
 
           </section>

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  get 'match' => 'matches#losMatch'
+
   get 'matches/new'
 
   get 'matches/create'
@@ -10,7 +13,7 @@ Rails.application.routes.draw do
   get 'sessions/new'
 
   post 'matches/:id' => 'matches#user_clicks_button_to_connect', as: 'user_yes'
-  
+
   root to:             'static_pages#home'
   get    'help'    =>  'static_pages#help'
   get    'home'    =>  'static_pages#index'

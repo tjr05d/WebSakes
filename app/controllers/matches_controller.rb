@@ -9,6 +9,9 @@ class MatchesController < ApplicationController
   def show
     @now_user = current_user
     @potential_connection = User.random_connection(@now_user)
+  end
+
+  def match
 
   end
 
@@ -34,8 +37,8 @@ class MatchesController < ApplicationController
   end
 
   def update
-
-    if @match.update_attribute(:active, true)
+    @match.first.active = true
+    if @match.first.save
       flash[:success] = "You have a match!"
     else
       flash[:alert] = "Oh no"
@@ -55,7 +58,7 @@ class MatchesController < ApplicationController
     if @match.first.nil?
       create
     else
-      @match = @match.find([params[:id], current_user.id])
+      # @match = @match.find([params[:id], current_user.id])
       update
 
     end

@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20151105013207) do
 
-  create_table "matches", id: false, force: :cascade do |t|
+  create_table "matches", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "connection_id"
     t.boolean  "active",        default: false
