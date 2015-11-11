@@ -8,7 +8,8 @@ class MatchesController < ApplicationController
 
   def show
     @now_user = current_user
-    @potential_connection = User.random_connection(@now_user)
+    @matched_already = User.take_matches_out(@now_user)
+    @potential_connection = User.random_connection(@matched_already)
 
   end
 
@@ -61,5 +62,9 @@ class MatchesController < ApplicationController
     end
     redirect_to matches_show_path
   end
+
+  # def user_clicks_no
+  #   redirect_to matches_show_path
+  # end
 
 end

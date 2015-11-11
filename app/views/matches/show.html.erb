@@ -25,11 +25,11 @@
 
         <h3> Business Cards </h3>
 
-
-        <%= @potential_connection.first_name%>
-
-
+        <% if @potential_connection.nil?%>
+          <p>You went through all the people!</p>
+        <% else %>
+        <h3><%= @potential_connection.first_name %></h3>
         <%= button_to "Yes", user_yes_path(@potential_connection.id), :method => "user_clicks_button_to_connect"%>
-        <%= button_to "No", matches_show_path%>
-
+        <%= link_to "No", matches_show_path %>
+        <% end %>
       </p>
