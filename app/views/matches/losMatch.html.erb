@@ -1,9 +1,10 @@
 <h1>Matches</h1>
 
-<h2><%= current_user.first_name.capitalize %> you have <%= pluralize(current_user.matches.count, "match") %> </h2>
+<h2><%= current_user.first_name.capitalize %> you have <%= pluralize(@combined_matches.count, "match") %> </h2>
 
 
-<% current_user.matches.each do |match| %>
+<% @combined_matches.each do |match| %>
+  <%if match.user.id == current_user.id %>
   <div class="col-sm-6 col-md-4">
     <div id='card'>
       <div id='front'>
@@ -18,5 +19,20 @@
         <strong><%= match.connection.linkedin %></strong><br>
       </div>
     </div>
-  </div>
+      <% else %>
+      <div class="col-sm-6 col-md-4">
+        <div id='card'>
+          <div id='front'>
+            <h1>
+              <%= match.user.first_name%> <%= match.user.last_name%>
+            </h1>
+          </div>
+          <div id='back'>
+            <strong><%= mail_to match.user.email %></strong>
+            <strong><%= match.user.contact_number %></strong><br>
+            <strong><%= match.user.twitter %></strong><br>
+            <strong><%= match.user.linkedin %></strong><br>
+          </div>
+        </div>
+      <% end %>
 <%end%>

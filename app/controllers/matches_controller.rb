@@ -13,6 +13,11 @@ class MatchesController < ApplicationController
 
   end
 
+  def losMatch
+    @now_user = current_user
+    @combined_matches = Match.combined_matches(@now_user)
+  end
+
   def create
     #when the first person decides to connect and the second oerson has not
     #selected to connect yet, a new pending match will be created in the
@@ -35,9 +40,9 @@ class MatchesController < ApplicationController
   end
 
   def update
-    @match.first.active = true
-    if @match.first.save
+    if @match.update_attribute(:active, true)
       flash[:success] = "You have a match!"
+      @match = nil
     else
       flash[:alert] = "Oh no"
     end
@@ -56,14 +61,10 @@ class MatchesController < ApplicationController
     if @match.first.nil?
       create
     else
-      update
-
+     @match = Match.find_by(user_id: params[:id], connection_id: current_user.id)
+     update
     end
     redirect_to matches_show_path
   end
-
-  # def user_clicks_no
-  #   redirect_to matches_show_path
-  # end
 
 end
