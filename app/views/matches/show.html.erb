@@ -1,6 +1,9 @@
 <%= provide(:title, current_user.first_name)%>
 
 <h1>Swipecard Test</h1>
+    <% if @potential_connection.nil?%>
+      <p>You went through all the people!</p>
+    <% else %>
       <section>
         <div class="cardcontainer list">
           <ul class="cardlist">
@@ -13,7 +16,7 @@
 
           </section>
           </ul>
-            <button class="but-nope"><%= button_to "No",
+            <button class="but-nope"><%= link_to "No",
                                       matches_show_path%></button>
             <button class="but-yay"><%= button_to "Yes",
                                       user_yes_path(@potential_connection.id),
@@ -24,35 +27,4 @@
           <ul class="cardlist" id="results">
           </ul>
         </section>
-
-
-
-      <!--   <p>
-        <h3> Matches </h3>
-        <%# @connecton_name= current_user.matches.first %><br>
-        <%# if @connection_name.nil? %>
-          <p> No matches yet </p>
-          <%#else %>
-          <%#= @connection_name.connection.first_name %>
-          <%# end %>
-        <%# @other_connection_name = connection_match.first %>
-        <%# if @other_connection_name.nil? %>
-          <p> No matches yet </p>
-          <%#else %>
-          <%#= @other_connection_name.user.first_name %>
-          <%# end %><br>
-
-        <h3> Business Cards </h3>
-
-
-        <%#= @potential_connection.first_name%>
-
-
-        <%#= button_to "Yes", user_yes_path(@potential_connection.id), :method => "user_clicks_button_to_connect"%>
-        <%#= button_to "No", matches_show_path%>
-
-      </p>
-    </section>
-  </aside>
-</div>
- -->
+      <% end %> 

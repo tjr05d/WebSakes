@@ -53,12 +53,17 @@ class User < ActiveRecord::Base
     return false if remember_digest.nil?
      BCrypt::Password.new(remember_digest).is_password?(remember_token)
   end
-
-  def self.random_connection(user_id)
-    where.not(id: user_id).shuffle.first
+#a method that eliminates matches the user already has from the possibilities
+  def self.take_matches_out(user_id)
+    @already_connected_id = [user_id.id]
+    find_by(id: user_id).matches.each do |match|
+    @already_connected_id << match.connection_id
+    end
+    @already_connected_id
   end
-
-
-
+#a method that selects a random person that is not you, and that you haven't connected with yet. 
+  def self.random_connection(matched_already)
+    where.not(id: matched_already).shuffle.first
+  end
 
 end

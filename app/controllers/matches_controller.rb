@@ -13,6 +13,10 @@ class MatchesController < ApplicationController
 
   def match
 
+    @matched_already = User.take_matches_out(@now_user)
+    @potential_connection = User.random_connection(@matched_already)
+
+
   end
 
   def create
@@ -62,8 +66,11 @@ class MatchesController < ApplicationController
       update
 
     end
-
     redirect_to matches_show_path
   end
+
+  # def user_clicks_no
+  #   redirect_to matches_show_path
+  # end
 
 end
