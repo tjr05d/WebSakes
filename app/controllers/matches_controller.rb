@@ -30,7 +30,7 @@ class MatchesController < ApplicationController
     @match.connection = User.find_by(id: params[:id])
 
     if @match.save
-      # from the aplication flash.each methodgit pull origin masters
+      # from the aplication flash.each methods
       flash[:success] = "connection pending"
       # redirect_to current_user
     else
@@ -66,5 +66,4 @@ class MatchesController < ApplicationController
     end
     redirect_to matches_show_path
   end
-
 end
