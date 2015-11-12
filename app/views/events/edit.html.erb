@@ -1,11 +1,11 @@
-<h1>Local Events</h1>
+<h1>Editing Event</h1>
 
-<%= form_for :event, url: events_path do |f| %>
+<%= form_for :event, url: event_path(@event), method: :patch do |f| %>
 
 <% if @event.errors.any? %>
 <div id="error_explanation">
   <h2>
-    <%= pluralize(@event.errors.count, "error") %> prohibited this article from being saved:
+    <%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:
   </h2>
   <ul>
     <% @event.errors.full_messages.each do |msg| %>
@@ -28,6 +28,7 @@
 <p>
   <%= f.submit %>
 </p>
+
 <% end %>
 
 <%= link_to 'Back', events_path %>

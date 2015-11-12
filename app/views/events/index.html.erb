@@ -1,20 +1,19 @@
-<h1>Local Events</h1>
+<h1>Listing Events</h1>
 
-<%= form_for :events do |f| %>
-<p>
-  <%= f.label :title %><br>
-  <%= f.text_field :title %>
-</p>
+<%= link_to 'New Event', new_event_path %>
 
-<p>
-  <%= f.label :text %><br>
-  <%= f.text_area :text %>
-</p>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+  </tr>
 
-<p>
-  <%= f.submit %>
-</p>
-<% end %>
-
+  <% @events.each do |event| %>
+  <tr>
+    <td><%= event.title %></td>
+    <td><%= event.text %></td>
+  </tr>
+  <% end %>
+</table>
 
 

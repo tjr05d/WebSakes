@@ -11,9 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151111043900) do
+ActiveRecord::Schema.define(version: 20151112003533) do
 
-  create_table "matches", id: false, force: :cascade do |t|
+  create_table "events", force: :cascade do |t|
+    t.string   "title"
+    t.text     "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "matches", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "connection_id"
     t.boolean  "active",        default: false
