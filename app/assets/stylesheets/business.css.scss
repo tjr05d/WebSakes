@@ -1,11 +1,9 @@
+$maincolor: #6acd79;
+$secondarycolor: #2a2b39;
 * {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-}
-
-.business {
-  float: left;
 }
 
 #back {
@@ -34,6 +32,7 @@
   padding: 35px 15px;
   font-size: 2em;
   text-align: justify;
+  background-color:#D3CBBD;
 }
 
 #front {
@@ -42,7 +41,7 @@
   left: 0;
   width: 350px;
   height: 230px;
-  background: #ED5F55;
+  background: #456F74;
   padding-top: 1px;
   -moz-transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
@@ -58,11 +57,12 @@
   -webkit-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);
 }
-#front h1 {
+#front h3 {
   text-align: center;
   color: white;
-  margin-top: 45px;
   text-shadow: 0 1px 0 #326773;
+  font-family: 'Arvo', serif;
+  font-weight: normal;
 }
 
 #card {
@@ -85,3 +85,23 @@
   -webkit-transform: rotateY(0deg);
   transform: rotateY(0deg);
 }
+
+.logo{
+    display: inline-block;
+    background: $maincolor;
+    color: #fff;
+    z-index: 11;
+    padding: .16em;
+    border: 8px solid #fff;
+    position: relative;
+    pointer-events: none;
+    margin-top: .4em;
+    font-size: 4em;
+    .fat{
+      font-weight: 800;
+    }
+    .skinny{
+      font-weight: 100;
+    }
+  }
+

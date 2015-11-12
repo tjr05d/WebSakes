@@ -3,6 +3,7 @@
 
 <h2><%= current_user.first_name.capitalize %> you have <%= pluralize(@combined_matches.count, "match") %> </h2>
 
+
 <% @combined_matches.each do |match| %>
   <%if match.user.id == current_user.id %>
 
@@ -16,16 +17,17 @@
         </a>
       </div>
     </div>
-
     <section class="list">
       <li>
-    <div id='card' style:'max-width:100%;'>
+    <div id='card'>
       <div id='front'>
-      <h1>
+        <div class="logo"><span class="fat"><%= match.connection.first_name.chars.first %></span><span class="skinny"><%= match.connection.last_name.chars.first%></span></div>
+      <h3>
         <p class="name">
-          <%= match.connection.first_name%> <%= match.connection.last_name%>
+           <%= match.connection.first_name%> <%= match.connection.last_name%>
         </p>
-      </h1>
+      </h3>
+        <%= match.connection.first_name%> <%= match.connection.last_name%>
         <!-- <h1>
           <%#= match.connection.first_name%> <%#= match.connection.last_name%>
         </h1> -->
@@ -42,11 +44,12 @@
     <li>
     <div id='card'>
       <div id='front'>
-      <h1>
-      <p class="name">
-          <%= match.user.first_name%> <%= match.user.last_name%>
-      </p>
-      </h1>
+      <div class="logo"><span class="fat"><%= match.user.first_name.chars.first %></span><span class="skinny"><%= match.user.last_name.chars.first%></span></div>
+      <h3>
+        <p class="name">
+            <%= match.user.first_name%> <%= match.user.last_name%>
+        </p>
+      </h3>
         <!-- <h1>
           <%#= match.user.first_name%> <%#= match.user.last_name%>
         </h1> -->

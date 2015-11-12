@@ -51,21 +51,27 @@ p {
 
 /* footer */
 
+
 footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid #fff;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #1595A3;
   color: #000;
+  text-align: center;
   a {
-    color: gray;
+    color: #ECF0F1;
+    font-size: 1.4em;
     &:hover {
       color: gray-darker;
     }
   }ul {
-    float: right;
+    text-align: RIGHT;
     list-style: none;
     li {
-      float: left;
+      display: inline;
       margin-left: 15px;
     }
   }
