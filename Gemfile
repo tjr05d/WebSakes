@@ -7,7 +7,7 @@ gem 'puma'
 gem 'sass'
 gem 'bootstrap-sass'
 gem 'sass-rails',           '5.0.3'
-
+gem 'searchkick'
 
 gem 'uglifier',     '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'

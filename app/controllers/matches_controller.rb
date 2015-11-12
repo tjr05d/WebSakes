@@ -10,7 +10,6 @@ class MatchesController < ApplicationController
     @now_user = current_user
     @matched_already = User.take_matches_out(@now_user)
     @potential_connection = User.random_connection(@matched_already)
-
   end
 
   def losMatch

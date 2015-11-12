@@ -1,16 +1,34 @@
+<body class="losMatch">
 <h1>Matches</h1>
 
 <h2><%= current_user.first_name.capitalize %> you have <%= pluralize(@combined_matches.count, "match") %> </h2>
 
-
 <% @combined_matches.each do |match| %>
   <%if match.user.id == current_user.id %>
-  <div class="col-sm-6 col-md-4">
-    <div id='card'>
+
+  <div id="test-list">
+
+    <div class='container'>
+      <div class='search-container'>
+        <input placeholder='search' type='text' class="fuzzy-search">
+        <a class='button'>
+          <i class='icon-search'></i>
+        </a>
+      </div>
+    </div>
+
+    <section class="list">
+      <li>
+    <div id='card' style:'max-width:100%;'>
       <div id='front'>
-        <h1>
+      <h1>
+        <p class="name">
           <%= match.connection.first_name%> <%= match.connection.last_name%>
-        </h1>
+        </p>
+      </h1>
+        <!-- <h1>
+          <%#= match.connection.first_name%> <%#= match.connection.last_name%>
+        </h1> -->
       </div>
       <div id='back'>
         <strong><%= mail_to match.connection.email %></strong>
@@ -19,20 +37,31 @@
         <strong><%= match.connection.linkedin %></strong><br>
       </div>
     </div>
-      <% else %>
-      <div class="col-sm-6 col-md-4">
-        <div id='card'>
-          <div id='front'>
-            <h1>
-              <%= match.user.first_name%> <%= match.user.last_name%>
-            </h1>
-          </div>
-          <div id='back'>
-            <strong><%= mail_to match.user.email %></strong>
-            <strong><%= match.user.contact_number %></strong><br>
-            <strong><%= match.user.twitter %></strong><br>
-            <strong><%= match.user.linkedin %></strong><br>
-          </div>
-        </div>
-      <% end %>
-<%end%>
+    </li>
+    <% else %>
+    <li>
+    <div id='card'>
+      <div id='front'>
+      <h1>
+      <p class="name">
+          <%= match.user.first_name%> <%= match.user.last_name%>
+      </p>
+      </h1>
+        <!-- <h1>
+          <%#= match.user.first_name%> <%#= match.user.last_name%>
+        </h1> -->
+      </div>
+      <div id='back'>
+        <strong><%= mail_to match.user.email %></strong>
+        <strong><%= match.user.contact_number %></strong><br>
+        <strong><%= match.user.twitter %></strong><br>
+        <strong><%= match.user.linkedin %></strong><br>
+      </div>
+    </div>
+    </li>
+    <%end%>
+  <%end%>
+        </section>
+  </div>
+
+</body>
