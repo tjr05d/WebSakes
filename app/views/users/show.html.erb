@@ -27,9 +27,10 @@
         <%= Match.first_name%>
 
         <p>
-        <%= button_to "Yes", user_yes_path, :method => "user_clicks_button_to_connect"%>
+        <%= button_to user_yes_path, :method => "user_clicks_button_to_connect" do %>
+          <i class="icon-pencil icon-white"></i>
+        <% end %>
       </p>
-        #button to call(check mark 'yes') user_clicks_button_to_connect
 
      </section>
    </aside>

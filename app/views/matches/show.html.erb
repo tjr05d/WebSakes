@@ -1,30 +1,46 @@
 <%= provide(:title, current_user.first_name)%>
+<body class="swipecard">
+  <h1>Swipecard Test</h1>
 
-<h1>Swipecard Test</h1>
-    <% if @potential_connection.nil?%>
-      <p>You went through all the people!</p>
+  <% if @potential_connection.nil?%>
+    <p>You went through all the people!</p>
     <% else %>
       <section class="container">
         <div class="cardcontainer list">
           <ul class="cardlist">
 
-          <section style="width:100%; height: 100%; background-color:red;">
-            <%= gravatar_for @potential_connection%>
-            <div>
-              <%= @potential_connection.first_name%><%= @potential_connection.last_name%>
-            </div>
+            <section id="elSection">
+              <div id="gravatar">
+                <%= gravatar_for @potential_connection%>
+              </div>
 
-          </section>
+              <div id="showName">
+                <%= @potential_connection.first_name.capitalize%> <%= @potential_connection.last_name.capitalize%>
+              </div>
+
+              <div id="elJob">
+                <%= @potential_connection.job_title%>
+              </div>
+
+              <div id="elCompany">
+                <%= @potential_connection.company_name%>
+              </div>
+
+            </section>
           </ul>
-            <button class="but-nope"><%= link_to "No",
-                                      matches_show_path%></button>
-            <button class="but-yay"><%= button_to "Yes",
-                                      user_yes_path(@potential_connection.id),
-                                   :method => "user_clicks_button_to_connect"%>
-            </button>
-            <span id="counter"></span>
-          </div>
-          <ul class="cardlist" id="results">
-          </ul>
-        </section>
-      <% end %>
+
+        <span id="thumbsDown">
+          <%= link_to matches_show_path, class: "but-nope" do %>
+            <i class="fa fa-thumbs-o-down fa-5x"></i>
+          <% end %>
+        </span>
+        <span id="thumbsUp"><%= link_to user_yes_path(@potential_connection.id),
+          :method => "user_clicks_button_to_connect", class: "but-yay" do %>
+            <i class="fa fa-thumbs-o-up fa-5x"></i>
+          <%end%>
+        </span>
+
+        </div>
+      </section>
+  <% end %>
+</body>
