@@ -14,4 +14,9 @@ module ApplicationHelper
     gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}"
     image_tag(gravatar_url, alt: user.first_name, class: "gravatar")
   end
+
+  def tel_to(text)
+    groups = text.to_s.scan(/(?:^\+)?\d+/)
+    link_to text, "tel:#{groups.join '-'}"
+  end
 end

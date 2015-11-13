@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151112003533) do
+ActiveRecord::Schema.define(version: 20151112220657) do
 
   create_table "events", force: :cascade do |t|
     t.string   "title"
@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 20151112003533) do
     t.integer  "contact_number",  limit: 8
     t.string   "twitter"
     t.string   "linkedin"
+    t.string   "job_title"
+    t.string   "company_name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
