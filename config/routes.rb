@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'live_chats/index'
+
   get 'match' => 'matches#losMatch'
 
   get 'matches/new'

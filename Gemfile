@@ -17,6 +17,8 @@ gem 'jbuilder',     '~> 2.0'
 gem "better_errors"
 gem 'sdoc',         '0.4.0', group: :doc
 gem 'composite_primary_keys'
+gem "opentok", "~> 2.3.2"
+
 group :test do
   gem 'minitest-reporters'
   gem 'mini_backtrace'
