@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
       if @potential_connection.nil?
         redirect_to match_path
       else
-        redirect_to match_show_path
+        redirect_to matches_show_path
       end
       flash[:success] =  "Weclome #{current_user.first_name}  😃  😃  😃  😃 "
     else
