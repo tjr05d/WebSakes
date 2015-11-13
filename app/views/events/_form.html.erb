@@ -13,19 +13,23 @@
 </div>
 <% end %>
 
-<p>
-  <%= f.label :title %><br>
-  <%= f.text_field :title %>
-</p>
+<div class="field">
+  <%= f.label :event %><br>
+  <%= f.text_field :event %>
+</div>
 
-<p>
-  <%= f.label :text %><br>
-  <%= f.text_area :text %>
-</p>
+<div class="field">
+  <%= f.label :published_on %><br>
+  <%= f.text_area :published_on %>
+</div>
 
-<p>
+<div class="field">
+<%= f.label :content %><br>
+<%= f.text_area :content %>
+
+<div class="actions">
   <%= f.submit %>
-</p>
+</div>
 
 <% end %>
 
