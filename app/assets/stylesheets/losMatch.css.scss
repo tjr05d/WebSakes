@@ -2,6 +2,35 @@ body.losMatch {
 $maincolor: #6acd79;
 $secondarycolor: #2a2b39;
 
+  .container {
+    text-align:center;
+  }
+  .losMatch > h1 {
+    color: #fff;
+  }
+
+  #thumbsUp i{
+    color: #fff;
+  }
+  #hover1 {
+    display: none;
+  }
+  .thumIcon:hover{
+    transform:scale(1);
+    bottom:-2%;
+    transition:transform .2s, opacity .2s;
+    font-size: 6em;
+    &.thumIcon:hover + #hover1 {
+     display: block;
+     color:#FF530D;
+     text-decoration: none;
+     font-size: 1.8rem;
+    }
+  }
+
+  div {
+    text-align: center;
+  }
 
   .search-container {
     float: right;
@@ -87,8 +116,6 @@ $secondarycolor: #2a2b39;
       font-size: 1.2em;
     }
   }
-
-
 
   #companyN{
     margin: 0;

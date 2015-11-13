@@ -17,6 +17,7 @@ class MatchesController < ApplicationController
     @combined_matches = Match.combined_matches(@now_user)
   end
 
+
   def create
     #when the first person decides to connect and the second oerson has not
     #selected to connect yet, a new pending match will be created in the
@@ -30,20 +31,20 @@ class MatchesController < ApplicationController
 
     if @match.save
       # from the aplication flash.each methods
-      flash[:success] = "connection pending"
+      flash.now[:success] = "connection pending"
       # redirect_to current_user
     else
-      flash[:alert] = "Oops"
+      flash.now[:alert] = "Oops"
 
     end
   end
 
   def update
     if @match.update_attribute(:active, true)
-      flash[:success] = "You have a match!"
+      flash.now[:success] = "You have a match!"
       @match = nil
     else
-      flash[:alert] = "Oh no"
+      flash.now[:alert] = "Oh no"
     end
   end
 
