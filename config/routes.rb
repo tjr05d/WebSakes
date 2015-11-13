@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-  # get 'events/index'
-
-  # get 'events/create'
-
   get 'match' => 'matches#losMatch'
 
   get 'matches/new'
@@ -35,6 +31,10 @@ Rails.application.routes.draw do
 
   resources :users
   resources :sessions
-  resources :events
 
+  # for events
+  resources :events do
+    resources :comments
+
+  end
 end
