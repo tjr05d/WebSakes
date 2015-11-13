@@ -1,112 +1,122 @@
 <body class="losMatch">
 <h1>Matches</h1>
 
-<h2><%= current_user.first_name.capitalize %> you have <%= pluralize(@combined_matches.count, "match") %> </h2>
-
-
+<h2><%= current_user.first_name.capitalize %> you have <%= pluralize(@combined_matches.count, "match") %></h2>
+  <span id="thumbsUp"><%= link_to matches_show_path do %>
+      <i class="thumIcon fa fa-thumbs-o-up fa-5x"></i>
+      <div id="hover1">Find more matches!</div>
+    <%end%>
+  </span>
   <div id="test-list">
 
     <div class='container-fluid'>
       <div class='search-container'>
         <input placeholder='search' type='text' class="fuzzy-search">
         <a class='button'>
-          <i class='icon-search'></i>
+          <i class='fa fa-search'></i>
         </a>
       </div>
     </div>
 
-<div class="list">
-<% @combined_matches.each do |match| %>
-  <%if match.user.id != current_user.id %>
+  <% if @combined_matches.count == 0 %>
+  <div class="text-center">
+    <h3>You don't have any connection.</h3>
+    <h4>You can hover and click the 'Thumbs icon' </h4>
+    <h4>to see active matches. </h4>
+  </div>
+  <% else %>
+  <div class="list">
+  <% @combined_matches.each do |match| %>
+    <%if match.user.id != current_user.id %>
+        <li>
+            <div id='card'>
+              <div id='front'>
+                <div class="logo"><span class="fat"><%= match.user.first_name.chars.first.upcase %></span><span class="skinny"><%= match.user.last_name.chars.first.upcase%></span>
+                </div>
+                  <p class="name">
+                    <%= match.user.first_name.capitalize%> <%= match.user.last_name.capitalize%>
+                  </p>
+                  <%if match.user.job_title.present?%>
+                    <p id="jobT">Job Title: <span><%= match.user.job_title%></span></p>
+                  <%end%>
+                  <%if match.user.company_name.present?%>
+                    <p id="companyN">Compnay Name: <span><%= match.user.company_name%></span></p>
+                  <%end%>
+              </div>
+                  <div id='back'>
+                    <section >
+                      <%if match.user.twitter.present?%>
+                      <div class="twitter">
+                        <i class="fa fa-twitter-square"></i><a href="https://twitter.com/<%= match.user.twitter%>" target="_blank">@<%= match.user.twitter%></a>
+                      </div>
+                      <%end%>
+                      <%if match.user.linkedin.present?%>
+                      <div class="linkedin">
+                        <i class="fa fa-linkedin-square"></i><a href="https://twitter.com/<%= match.user.linkedin%>" target="_blank"><%= match.user.linkedin%>
+                        </a>
+                      </div>
+                      <%end%>
+                      <%if match.user.contact_number.present?%>
+                      <div class="phone">
+                        <i class="fa fa-mobile"></i><%= tel_to number_to_phone(match.user.contact_number)%>
+                      </div>
+                      <%end%>
+                      <div class="email">
+                        <i class="fa fa-envelope"></i><%= mail_to match.user.email %>
+                      </div>
+                    </section>
+                 </div>
+            </div>
+          </li>
+
+      <% else %>
+
       <li>
           <div id='card'>
             <div id='front'>
-              <div class="logo"><span class="fat"><%= match.user.first_name.chars.first %></span><span class="skinny"><%= match.user.last_name.chars.first%></span>
+              <div class="logo"><span class="fat"><%= match.connection.first_name.chars.first.upcase %></span><span class="skinny"><%= match.connection.last_name.chars.first.upcase%></span>
               </div>
+
                 <p class="name">
-                  <%= match.user.first_name%><%= match.user.last_name%>
+                <%= match.connection.first_name.capitalize%> <%= match.connection.last_name.capitalize%>
                 </p>
-                <%if match.user.job_title.present?%>
+
+                <%if match.connection.job_title.present?%>
                   <p id="jobT">Job Title: <span><%= match.user.job_title%></span></p>
                 <%end%>
-                <%if match.user.company_name.present?%>
+                <%if match.connection.company_name.present?%>
                   <p id="companyN">Compnay Name: <span><%= match.user.company_name%></span></p>
                 <%end%>
             </div>
-                <div id='back'>
-                  <section >
-                    <%if match.user.twitter.present?%>
-                    <div class="twitter">
-                      <i class="fa fa-twitter-square"></i><a href="https://twitter.com/<%= match.user.twitter%>" target="_blank">@<%= match.user.twitter%></a>
-                    </div>
-                    <%end%>
-                    <%if match.user.linkedin.present?%>
-                    <div class="linkedin">
-                      <i class="fa fa-linkedin-square"></i><a href="https://twitter.com/<%= match.user.linkedin%>" target="_blank"><%= match.user.linkedin%>
-                      </a>
-                    </div>
-                    <%end%>
-                    <%if match.user.contact_number.present?%>
-                    <div class="phone">
-                      <i class="fa fa-mobile"></i><%= tel_to number_to_phone(match.user.contact_number)%>
-                    </div>
-                    <%end%>
-                    <div class="email">
-                      <i class="fa fa-envelope"></i><%= mail_to match.user.email %>
-                    </div>
-                  </section>
-               </div>
-          </div>
+              <div id='back'>
+              <section >
+                      <%if match.connection.twitter.present?%>
+                      <div class="twitter">
+                        <i class="fa fa-twitter-square"></i><a href="https://twitter.com/<%= match.connection.twitter%>" target="_blank"><%= match.connection.twitter%></a>
+                      </div>
+                      <%end%>
+                      <%if match.connection.linkedin.present?%>
+                      <div class="linkedin">
+                        <i class="fa fa-linkedin-square"></i><a href="https://www.linkedin.com/in/<%= match.connection.linkedin%>" target="_blank"><%= match.connection.linkedin%>
+                        </a>
+                      </div>
+                      <%end%>
+                      <%if match.connection.contact_number.present?%>
+                      <div class="phone">
+                        <i class="fa fa-mobile"></i><%= tel_to number_to_phone(match.connection.contact_number)%>
+                      </div>
+                      <%end%>
+                      <div class="email">
+                        <i class="fa fa-envelope"></i><%= mail_to match.connection.email %>
+                      </div>
+                    </section>
+
+              </div>
+            </div>
         </li>
 
-    <% else %>
-
-    <li>
-        <div id='card'>
-          <div id='front'>
-            <div class="logo"><span class="fat"><%= match.connection.first_name.chars.first %></span><span class="skinny"><%= match.connection.last_name.chars.first%></span>
-            </div>
-
-              <p class="name">
-              <%= match.connection.first_name%> <%= match.connection.last_name%>
-              </p>
-
-              <%if match.connection.job_title.present?%>
-                <p id="jobT">Job Title: <span><%= match.user.job_title%></span></p>
-              <%end%>
-              <%if match.connection.company_name.present?%>
-                <p id="companyN">Compnay Name: <span><%= match.user.company_name%></span></p>
-              <%end%>
-          </div>
-            <div id='back'>
-            <section >
-                    <%if match.connection.twitter.present?%>
-                    <div class="twitter">
-                      <i class="fa fa-twitter-square"></i><a href="https://twitter.com/<%= match.connection.twitter%>" target="_blank"><%= match.connection.twitter%></a>
-                    </div>
-                    <%end%>
-                    <%if match.connection.linkedin.present?%>
-                    <div class="linkedin">
-                      <i class="fa fa-linkedin-square"></i><a href="https://twitter.com/<%= match.connection.linkedin%>" target="_blank"><%= match.connection.linkedin%>
-                      </a>
-                    </div>
-                    <%end%>
-                    <%if match.connection.contact_number.present?%>
-                    <div class="phone">
-                      <i class="fa fa-mobile"></i><%= tel_to number_to_phone(match.connection.contact_number)%>
-                    </div>
-                    <%end%>
-                    <div class="email">
-                      <i class="fa fa-envelope"></i><%= mail_to match.connection.email %>
-                    </div>
-                  </section>
-
-            </div>
-          </div>
-      </li>
-
+    <%end%>
   <%end%>
+  </div>
 <%end%>
-</div>
-</div>
 </body>

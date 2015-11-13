@@ -16,8 +16,9 @@
     left: -110px;
     width: 160px;
     height: 100%;
-    background:#1595A3;
+    background:#424E4F;
     z-index:500;
+    border: 1px solid white;
 }
 #primary_nav ul{
     display: block;
@@ -49,7 +50,7 @@
   transition: all 0.2s ease;
 }
 #mobile_nav{
-    font-size:36px;
+    font-size:30px;
     position: relative;
     display: inline-block;
     top:10px;

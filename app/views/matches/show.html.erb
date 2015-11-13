@@ -1,9 +1,13 @@
 <%= provide(:title, current_user.first_name)%>
 <body class="swipecard">
-  <h1>Swipecard Test</h1>
-
+  <h1>Find Match</h1>
+    <span class=""><%= link_to match_path, style: "color:#FFF;" do %>
+        <i class="searchPlus fa fa-search-plus fa-3x"></i>
+        <div id="hover5">See matches!</div>
+      <%end%>
+    </span>
   <% if @potential_connection.nil?%>
-    <p>You went through all the people!</p>
+    <p class="text-center" style="margin-top: 5em;">You went through all the people!</p>
     <% else %>
       <section class="container">
         <div class="cardcontainer list">

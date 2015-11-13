@@ -11,13 +11,12 @@
 <body>
   <%= render "layouts/header"%>
   <div class="">
-    <div class="container text-center">
+    <div class=" text-center">
       <% flash.each do |message_type, message| %>
         <div class="alert alert-<%= message_type %>"><%= message %></div>
     </div>
     <% end %>
     <%= yield %>
-  <%= render "layouts/footer"%>
   </div>
   <script src="http://www.listjs.com/no-cdn/list.fuzzysearch.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
