@@ -4,7 +4,7 @@
 
 #events .calendar {
   border-collapse: collapse;
-  width: 100%;
+  width: 90%;
 
   td, th {
     font-family: 'Arvo', serif;
@@ -39,7 +39,7 @@
   text-align: center;
   a {
     text-decoration: none;
-    padding: 0, 10px;
+    padding: 10px, 10px;
     color: #999;
   }
 }
@@ -47,4 +47,5 @@
 #events ul {
   font-size: 11px;
   padding-left: 20px;
+  padding-right: 20px;
 }
