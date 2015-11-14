@@ -1,19 +1,23 @@
 <p>
-  <strong>Title:</strong>
-  <%= @event.title %>
+  <h1>Event:</h1>
+  <h3><%= @event.title %></h3>
 </p>
 
 <p>
-  <strong>Text:</strong>
-  <%= @event.text %>
+  <h1>Details:</h1>
+  <h3><%= @event.text %></h3>
 </p>
 
-<h2>Comments</h2>
-<%= render @event.comments %>
+<br>
+<br>
 
-<h2>Add a comment:</h2>
+<strong>Comments</strong>
+<%= render @event.comments %>
+<br>
+<strong>Add a comment:</strong>
 <%= render 'comments/form' %>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<%= link_to 'Back', events_path %> |
+<%= link_to "Delete", event_path, method: :delete %>
 
