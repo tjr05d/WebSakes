@@ -39,15 +39,18 @@
           </div>
         </div>
 
+      <% end %>
 
-
-        <span id = "startChat">
-          <button>Click me </button>
-        </span>
+      <script type="text/javascript"> var apiKey = '<%= @api_key%>'</script>
+      <script type="text/javascript"> var sessionID = '<%= @session.session_id%>' </script>
+      <script type="text/javascript"> var token = '<%= @token%>' </script>
+      
+      <span id = "startChat">
+        <button>Click me </button>
+      </span>
 
       <span id = "endChat">
         <button> End Chat </button>
       </span>
 
-      <% end %>
 <%end%>
