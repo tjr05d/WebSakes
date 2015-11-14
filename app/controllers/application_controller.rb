@@ -7,8 +7,6 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
   include UsersHelper
 
-
 #random_user is a method that selects a random user from the database to
 #present to the current user
-
 end
