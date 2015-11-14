@@ -2,10 +2,6 @@
 
 <h2><%= current_user.first_name.capitalize %> you have <%= pluralize(@combined_matches.count, "match") %> </h2>
 
-<span id = "startSession">
-  <button>Available to chat</button>
-</span>
-
 <% @combined_matches.each do |match| %>
   <%if match.user.id == current_user.id %>
   <div class="col-sm-6 col-md-4">
@@ -13,6 +9,10 @@
       <div id='front'>
         <h1>
           <%= match.connection.first_name%> <%= match.connection.last_name%>
+
+      <script type="text/javascript"> var apiKey = '<%= @api_key%>'</script>
+      <script type="text/javascript"> var sessionID = '<%= match.session_id %>' </script>
+      <script type="text/javascript"> var token = '<%= match.token%>' </script>
         </h1>
       </div>
       <div id='back'>
@@ -20,6 +20,16 @@
         <strong><%= match.connection.contact_number %></strong><br>
         <strong><%= match.connection.twitter %></strong><br>
         <strong><%= match.connection.linkedin %></strong><br>
+        <span id = "startSession">
+          <button>
+            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+          </button>
+        </span>
+        <span id = "textChat">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">
+              <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+            </button>
+        </span>
 
       </div>
     </div>
@@ -29,6 +39,9 @@
           <div id='front'>
             <h1>
               <%= match.user.first_name%> <%= match.user.last_name%>
+              <script type="text/javascript"> var apiKey = '<%= @api_key%>'</script>
+              <script type="text/javascript"> var sessionID = '<%= match.session_id %>' </script>
+              <script type="text/javascript"> var token = '<%= match.token%>' </script>
             </h1>
           </div>
           <div id='back'>
@@ -36,21 +49,64 @@
             <strong><%= match.user.contact_number %></strong><br>
             <strong><%= match.user.twitter %></strong><br>
             <strong><%= match.user.linkedin %></strong><br>
+
+            <span id = "startSession">
+              <button>
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+              </button>
+            </span>
+
+
+            <span id = "textChat">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">
+                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+              </button>
+            </span>
+
+
           </div>
         </div>
 
       <% end %>
 
-      <script type="text/javascript"> var apiKey = '<%= @api_key%>'</script>
-      <script type="text/javascript"> var sessionID = '<%= @session.session_id%>' </script>
-      <script type="text/javascript"> var token = '<%= @token%>' </script>
-      
-      <span id = "startChat">
-        <button>Click me </button>
-      </span>
+    <div id = "subscriber"> </div>
 
-      <span id = "endChat">
-        <button> End Chat </button>
-      </span>
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg">
+    <div>
 
+
+
+  </div>
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Let's Talk</h4>
+
+        <span id = "startChat">
+          <button>
+              <span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span>
+          </button>
+        </span>
+
+        <span id = "endChat">
+          <button> End Chat </button>
+        </span>
+      </div>
+
+      <div class="modal-body">
+        <div id="textchat">
+          <p id="history"></p>
+
+      </div>
+
+      <div class="modal-footer">
+        <form>
+            <input type="text" placeholder="Say Something!" id="msgTxt"></input>
+        </form>
+    </div>
+    </div>
+  </div>
+</div>
 <%end%>

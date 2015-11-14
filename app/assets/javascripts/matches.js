@@ -20,9 +20,10 @@ clicking = function(){
      } else {
      // This example assumes that a DOM element with the ID 'publisherElement' exists
        $('#startChat').on('click', function() {
+        //  $('#myModal').modal('show');
        var publisherProperties = {width: 400, height:300, name:"Tim's stream"};
 
-       publisher = OT.initPublisher('publisherElement', publisherProperties);
+       publisher = OT.initPublisher('textchat', publisherProperties);
 
        session.publish(publisher);
 
@@ -31,31 +32,44 @@ clicking = function(){
        });
       });
       }
- });
 
-  $('#joinSession').on('click', function (){
-    console.log("joining a session");
-    var session = OT.initSession(apiKey, join_sessionID);
-    session.connect(token, function(error) {
-      if (error) {
-        console.log(error.message);
-      } else {
-      // This example assumes that a DOM element with the ID 'publisherElement' exists
-        var publisherProperties = {width: 400, height:300, name:"Tim's stream"};
+      session.on('streamCreated', function(event) {
+      session.subscribe(event.stream, 'subscriber', {
+      insertMode: 'append',
+      width: '100%',
+      height: '100%'
+  });
+});
 
-        publisher = OT.initPublisher('publisherElement', publisherProperties);
+  var form = document.querySelector('form');
+  var msgTxt = document.querySelector('#msgTxt');
 
-        session.publish(publisher);
+    form.addEventListener('submit', function(event) {
+    event.preventDefault();
 
-        $('#endChat').on('click', function(){
-          publisher.destroy();
-        });
-       });
-       }
-  })
- });
+    session.signal({
+      type: 'chat',
+      data: msgTxt.value
+    },
+    function(error) {
+      if (!error) {
+        msgTxt.value = '';
+      }
+    });
+  });
+
+
+ var msgHistory = document.querySelector('#history');
+
+   session.on('signal:chat', function(event) {
+   var msg = document.createElement('p');
+   msg.innerHTML = event.data;
+   msg.className = event.from.connectionId === session.connection.connectionId ? 'mine' : 'theirs';
+   msgHistory.appendChild(msg);
+   msg.scrollIntoView();
+  });
+    });
+})
 }
-
-
 $(document).ready(clicking);
 $(document).on('page:load', clicking);

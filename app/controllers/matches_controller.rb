@@ -16,16 +16,19 @@ class MatchesController < ApplicationController
   def losMatch
     @now_user = current_user
     @combined_matches = Match.combined_matches(@now_user)
+    @api_key = '45406182'
+    @api_secret = "ee066de80ac21bf1237fb6fdd595127a1d6e8ac7"
 
+
+  end
+
+  def create
     @api_key = '45406182'
     @api_secret = "ee066de80ac21bf1237fb6fdd595127a1d6e8ac7"
 
     @opentok = OpenTok::OpenTok.new @api_key, @api_secret
     @session = @opentok.create_session :media_mode => :routed
     @token = @session.generate_token
-  end
-
-  def create
     #when the first person decides to connect and the second oerson has not
     #selected to connect yet, a new pending match will be created in the
     #database with the default active attribute false
@@ -35,6 +38,10 @@ class MatchesController < ApplicationController
     #the id  person that they select will be set to the random_user is
     #which is the id of the person that is on the screen
     @match.connection = User.find_by(id: params[:id])
+
+    @match.session_id = @session.session_id
+
+    @match.token = @token
 
     if @match.save
       # from the aplication flash.each methods
