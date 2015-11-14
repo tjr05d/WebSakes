@@ -1,0 +1,119 @@
+body.swipecard {
+
+  h1{color:#fff;}
+
+  #hover5 {
+    display: none;
+  }
+  .searchPlus:hover{
+    transform:scale(1);
+    bottom:-2%;
+    transition:transform .2s, opacity .2s;
+    font-size: 6em;
+    &.searchPlus:hover + #hover5 {
+     display: block;
+     color:#FF530D;
+     text-decoration: none;
+     font-size: 1.8rem;
+    }
+  }
+
+  #thumbsUp {
+    font-size: 2.2em;
+    margin-right: .5em;
+    &#thumbsUp i{
+      color:green;
+    }
+  }
+
+  #thumbsDown {
+      font-size: 2.2em;
+    }
+  #thumbsDown i {
+      color:red;
+    }
+
+  #elSection {
+    border-radius: 2%;
+    width:100%;
+    height: 100%;
+  }
+
+  img.gravatar{
+    text-align: center;
+    padding-top: 2em;
+    border-radius: 3em;
+    height:10em
+  }
+
+  #gravatar {
+    text-align: center;
+  }
+
+  #showName {
+    margin-top: 5%;
+      font-weight: 400;
+      font-size: 2.4em;
+      text-align: center;
+      position: relative;
+      margin-bottom: .35em;
+  }
+
+  #elJob {
+    text-align: center;
+    color: #2a2b39;;
+    font-size: 1.43em;
+    font-style: italic;
+  }
+
+  #elCompany {
+    text-align: center;
+  }
+  .cardcontainer {
+    width: 350px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  .list ul.cardlist {
+    margin: 0 0 10px 0;
+    height: 350px;
+  }
+
+  .but-nope::after {
+    content: 'Nope!';
+    position: absolute;
+    top: -35px;
+    left: 20px;
+    font-size: 30px;
+    transform: rotate(-30deg);
+    background: #c00;
+    padding: .2em .4em;
+    color: #fff;
+    display: block;
+    transition: 0.4s;
+    opacity: 0;
+  }
+  .but-nope:hover::after {
+    opacity: 1;
+    top: 35px;
+  }
+  .but-yay::after {
+    content: 'Yes!';
+    position: absolute;
+    top: -35px;
+    right: 20px;
+    font-size: 30px;
+    background: #0c0;
+    color: #fff;
+    padding: .2em .4em;
+    transform: rotate(30deg);
+    display: block;
+    transition: 0.4s;
+    opacity: 0;
+  }
+  .but-yay:hover::after {
+    opacity: 1;
+    top: 35px;
+  }
+}

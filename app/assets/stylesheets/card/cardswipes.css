@@ -1,20 +1,3 @@
-/* Card design */
-.card {
-  font-size: 14px;
-  line-height: 200px;
-  text-align:center;
-  width: 150px;
-  height: 200px;
-  display: block;
-  background: #666;
-  -webkit-transform-origin: 50% 99%;
-  transform-origin: 50% 99%;
-}
-.cardcontainer {
-  padding: 10px;
-  text-align: center;
-  width: 150px;
-}
 
 /* List functionality */
 .list .cardlist {
@@ -26,40 +9,6 @@
 }
 .list .current {
   display: block;
-}
-
-/* Buttons */
-
-button {
-  background: #0c0;
-  border: none;
-  color: #fff;
-  border-radius: 50% 50%;
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
-  margin: 0 .5em;
-  display: inline-block;
-}
-button:focus {
-  outline: 0;
-  background: #0f0;
-}
-.but-nope {
-  background: #c00;
-}
-.but-nope:focus {
-  outline: 0;
-  background: #f00;
-}
-
-.cardcontainer.yes .card {
-  -webkit-animation: yay 0.7s ease-out;
-  animation: yay 0.7s ease-out;
-}
-.cardcontainer.nope .card {
-  -webkit-animation: nope 0.7s ease-out;
-  animation: nope 0.7s ease-out;
 }
 
 

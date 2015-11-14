@@ -39,7 +39,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
       flash[:success] = "Profile updated"
-      redirect_to matches_show_path
+      redirect_to match_path
       # Handle a successful update.
     else
       render 'edit'
@@ -57,7 +57,8 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:first_name, :last_name, :email,
                                     :password, :password_confirmation,
-                                    :contact_number, :twitter, :linkedin)
+                                    :contact_number, :twitter, :linkedin,
+                                    :job_title, :company_name)
     end
 
    # Before filters

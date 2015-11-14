@@ -7,9 +7,6 @@ body {
 
 /* universal */
 
-section {
-  overflow: auto;
-}
 
 textarea {
   resize: vertical;
@@ -49,148 +46,133 @@ p {
   line-height: 1.7em;
 }
 
-/* footer */
-
-footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid #fff;
-  color: #000;
-  a {
-    color: gray;
-    &:hover {
-      color: gray-darker;
-    }
-  }ul {
-    float: right;
-    list-style: none;
-    li {
-      float: left;
-      margin-left: 15px;
-    }
-  }
-}
 
 body {
   background-color: #171a1e;
 }
 
-h1.team-h1 {
-  text-align: center;
-  left: 40%;
-  padding: 0px 20px;
-  color: #fff;
-}
+body.team{
 
-
-.team-container {
-  max-width: 1000px;
-  max-height: 100vh;
-  margin-top: 40px;
-  margin: auto;
-  border-top: 1px #e9e9e9 solid;
-  border-bottom: 1px #e9e9e9 solid;
-  padding-top: 5em;
-  padding-bottom: 3em;
-  position: relative;
-}
-
-.team-member {
-  width: 18%;
-  float: left;
-  text-align: center;
-  margin-right: 5%;
-}
-
-.team-member:last-child {margin-right: 0;}
-
-
-.team-member h3 {
-  color: #1CA3A3;
-}
-
-.email {
-  color: #EA2678;
-}
-
-
-.team-member span {
-  display: block;
-}
-
-.team-member a {
-  text-decoration: none;
-}
-
-.team-member a:hover {
-    color:#fff;
+  section.team-container{
+    border: none;
   }
-
-
-.team-photo {
-  border-radius: 50%;
-  text-align: center;
-  margin: auto;
-  max-width: 100%;
-  height: auto;
-  transition: 0.1s transform ease-in-out;
-}
-
-
-.team-photo:hover {
-  transform: scale(0.9);
-  border: 5px solid white;
-}
-
-#hover1 {
-  display: none;
-}
-.team-photo:hover + #hover1 {
-   display: block;
-   color:green;
-   font-size: 1.8rem;
-}
-
-#hover2 {
-  display: none;
-}
-.team-photo:hover + #hover2 {
-   display: block;
-   color:pink;
-   font-size: 1.8rem;
-}
-
-#hover3 {
-  display: none;
-}
-.team-photo:hover + #hover3 {
-   display: block;
-   color: tomato;
-   font-size: 1.8rem;
-}
-/* code for phone layout */
-@media (min-width:650px){
-  .team-member {
-    width:25%;
-    margin-left: 4%;
-    margin-right: 4%;
-    margin-bottom: 40px;
-
-  }
-
-}
-
-@media (max-width:649px){
-  .team-member {
-    float: none;
-    display: inline-block;
-    margin: 50px auto;
-    width: 100%;
+  h1.team-h1 {
     text-align: center;
+    left: 40%;
+    padding: 0px 20px;
+    color: #fff;
   }
 
-  .team-member h3,
+
+  .team-container {
+    max-width: 1000px;
+    max-height: 100vh;
+    margin-top: 40px;
+    margin: auto;
+    border-top: 1px #e9e9e9 solid;
+    border-bottom: 1px #e9e9e9 solid;
+    padding-top: 5em;
+    padding-bottom: 3em;
+    position: relative;
+  }
+
+  .team-member {
+    width: 18%;
+    float: left;
+    text-align: center;
+    margin-right: 5%;
+  }
+
+  .team-member:last-child {margin-right: 0;}
+
+
+  .team-member h3 {
+    color: #1CA3A3;
+  }
+
+  .email {
+    color: #EA2678;
+  }
+
+
   .team-member span {
-    margin: 15px auto;
+    display: block;
+  }
+
+  .team-member a {
+    text-decoration: none;
+  }
+
+  .team-member a:hover {
+      color:#fff;
+    }
+
+
+  .team-photo {
+    border-radius: 50%;
+    text-align: center;
+    margin: auto;
+    max-width: 100%;
+    height: auto;
+    transition: 0.1s transform ease-in-out;
+  }
+
+
+  .team-photo:hover {
+    transform: scale(0.9);
+    border: 5px solid white;
+  }
+
+  #hover1 {
+    display: none;
+  }
+  .team-photo:hover + #hover1 {
+     display: block;
+     color:#0FAEE8;
+     font-size: 1.8rem;
+  }
+
+  #hover2 {
+    display: none;
+  }
+  .team-photo:hover + #hover2 {
+     display: block;
+     color:#FF2A93;
+     font-size: 1.8rem;
+  }
+
+  #hover3 {
+    display: none;
+  }
+  .team-photo:hover + #hover3 {
+     display: block;
+     color: #FF6322;
+     font-size: 1.8rem;
+  }
+  /* code for phone layout */
+  @media (min-width:650px){
+    .team-member {
+      width:25%;
+      margin-left: 4%;
+      margin-right: 4%;
+      margin-bottom: 40px;
+
+    }
+
+  }
+
+  @media (max-width:649px){
+    .team-member {
+      float: none;
+      display: inline-block;
+      margin: 50px auto;
+      width: 100%;
+      text-align: center;
+    }
+
+    .team-member h3,
+    .team-member span {
+      margin: 15px auto;
+    }
   }
 }

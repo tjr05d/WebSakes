@@ -3,5 +3,5 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 jQuery ->
-  $('#event_created_at').datepicker()
+  $('#event_created_at').datepicker
     dateFormat: 'yy-mm-dd'

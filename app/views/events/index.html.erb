@@ -1,4 +1,4 @@
-<h1>Listing Events</h1>
+<h1>Local Events</h1>
 
 <div id="events">
   <h2 id="month">
@@ -10,8 +10,8 @@
     <%= date.day %>
       <% if @events_by_date[date] %>
       <ul>
-        <%= @events_by_date[date].each do |event| %>
-          <li><%= link_to event.name, event %></li>
+        <% @events_by_date[date].each do |event| %>
+          <li><%= link_to event.title, event %></li>
         <% end %>
       </ul>
     <% end %>

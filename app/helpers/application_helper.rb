@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def full_title(page_title = "")
-    base_title = "Website Name"
+    base_title = "First Impression"
     if page_title.empty?
       base_title
     else
@@ -13,5 +13,10 @@ module ApplicationHelper
     gravatar_id = Digest::MD5::hexdigest(user.email.downcase)
     gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}"
     image_tag(gravatar_url, alt: user.first_name, class: "gravatar")
+  end
+
+  def tel_to(text)
+    groups = text.to_s.scan(/(?:^\+)?\d+/)
+    link_to text, "tel:#{groups.join '-'}"
   end
 end
