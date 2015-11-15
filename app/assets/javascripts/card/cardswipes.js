@@ -79,8 +79,8 @@
         }
       }
     }
-  // document.body.addEventListener('animationend', animationdone);
-  // document.body.addEventListener('webkitAnimationEnd', animationdone);
-  // document.body.addEventListener('click', animatecard);
-  // })();
+  document.body.addEventListener('animationend', animationdone);
+  document.body.addEventListener('webkitAnimationEnd', animationdone);
+  document.body.addEventListener('click', animatecard);
+
 });
