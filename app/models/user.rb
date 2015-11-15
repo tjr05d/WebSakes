@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   #added in the associations between the user and other users
-  has_many :matches, :foreign_key => :user_id, :class_name => "Match"
+  has_many :matches, :foreign_key => :user_id, :class_name => "Match", dependent: :destroy
   # has-many (:reverse_matches, :class_name => "Match", :foreign_key => :second_selector_id, :dependent => :destroy)
 
   has_many :connections, :through => :matches
