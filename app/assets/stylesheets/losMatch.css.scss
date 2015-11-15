@@ -300,9 +300,11 @@ body.losMatch {
 
   input#msgTxt {
     height: 40px;
-    position: absolute;
+    // position: absolute;
     bottom: 0;
-    width: 100%;
+    width: 85%;
+    margin-left: 40px; 
+
   }
 
   #history .mine {

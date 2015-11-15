@@ -40,7 +40,7 @@ clicking = function(){
             if (streams[i].connection.connectionId == session.connection.connectionId) {
               return;
             }
-            var newStream = document.querySelector('textchat');
+            var newStream = document.querySelector('subscriber');
 
             var stream = document.createElement('div');
             stream.innerHTML = event.data;
@@ -57,7 +57,7 @@ clicking = function(){
                  return;
                }
            // Create the div to put the subscriber element in to
-           var newStream = document.querySelector('textchat');
+           var newStream = document.querySelector('subscriber');
 
            var stream = document.createElement('div');
            stream.innerHTML = event.data;
