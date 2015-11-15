@@ -6,9 +6,9 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+
 module WebShakes
   class Application < Rails::Application
-
     # Enable the asset pipeline
     config.assets.enabled = true
     # Version of your assets, change this if you want to expire all your assets
