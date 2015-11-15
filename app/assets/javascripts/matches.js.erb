@@ -12,8 +12,9 @@ clicking = function(){
  // var session = OT.initSession(apiKey, sessionID);
 
  $('#startSession').on('click', function (){
+   var sessionID = "<%= match.@session_id %> "
    console.log("session started");
-   var session = OT.initSession(apiKey, sessionID);
+   var session = OT.initSession(apiKey, sessionID );
    session.connect(token, function(error) {
      if (error) {
        console.log(error.message);
@@ -33,13 +34,43 @@ clicking = function(){
       });
       }
 
-      session.on('streamCreated', function(event) {
-      session.subscribe(event.stream, 'textchat', {
-      insertMode: 'append',
-      width: 400,
-      height: 300
-  });
+      session.addEventListener('sessionConnected', function(e){
+        session.publish( publisher );
+          for (var i = 0; i < e.streams.length; i++) {
+            // Make sure we don't subscribe to ourself
+            if (streams[i].connection.connectionId == session.connection.connectionId) {
+              return;
+            }
+            var div = document.createElement('div');
+            div.setAttribute('id', 'stream' + streams[i].streamId);
+            document.body.appendChild(div);
+
+            session.subscribe(e.streams[i]);
+          }
+        }
+
+      session.addEventListener('streamCreated', function(e){
+          for (var i = 0; i < e.streams.length; i++) {
+  // Make sure we don't subscribe to ourself
+            if (streams[i].connection.connectionId == session.connection.connectionId) {
+          return;
+        }
+    // Create the div to put the subscriber element in to
+        var div = document.createElement('div');
+        div.setAttribute('id', 'stream' + streams[i].streamId);
+        document.body.appendChild(div);
+        session.subscribe(streams[i], div.id);
+        }
+
 });
+
+//       session.on('streamCreated', function(event) {
+//       session.subscribe(event.stream, 'textchat', {
+//       insertMode: 'append',
+//       width: 400,
+//       height: 300
+//   });
+// });
 
   var form = document.querySelector('form');
   var msgTxt = document.querySelector('#msgTxt');
