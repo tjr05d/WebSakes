@@ -12,7 +12,6 @@ clicking = function(){
  // var session = OT.initSession(apiKey, sessionID);
 
  $('#startSession').on('click', function (){
-   var sessionID = "<%= match.@session_id %> "
    console.log("session started");
    var session = OT.initSession(apiKey, sessionID );
    session.connect(token, function(error) {
