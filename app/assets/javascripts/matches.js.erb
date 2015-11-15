@@ -50,29 +50,30 @@ clicking = function(){
            });
              });
 
+             session.addEventListener('streamCreated', function(e){
+                 for (var i = 0; i < e.streams.length; i++) {
+         // Make sure we don't subscribe to ourself
+                   if (streams[i].connection.connectionId == session.connection.connectionId) {
+                 return;
+               }
+           // Create the div to put the subscriber element in to
+           var newStream = document.querySelector('textchat');
+
+           var stream = document.createElement('div');
+           stream.innerHTML = event.data;
+           stream.className = event.from.connectionId === session.connection.connectionId ? 'mine' : 'theirs';
+           newStream.appendChild(stream);
+
+               }
+
+       });
+
             // div.setAttribute('id', 'stream' + streams[i].streamId);
             // var node = getElementById('textchat')
             // node.appendChild('div');
             // session.subscribe(streams[i], div.id);
         }
 
-      session.addEventListener('streamCreated', function(e){
-          for (var i = 0; i < e.streams.length; i++) {
-  // Make sure we don't subscribe to ourself
-            if (streams[i].connection.connectionId == session.connection.connectionId) {
-          return;
-        }
-    // Create the div to put the subscriber element in to
-    var newStream = document.querySelector('textchat');
-
-    var stream = document.createElement('div');
-    stream.innerHTML = event.data;
-    stream.className = event.from.connectionId === session.connection.connectionId ? 'mine' : 'theirs';
-    newStream.appendChild(stream);
-
-        }
-
-});
 
 //       session.on('streamCreated', function(event) {
 //       session.subscribe(event.stream, 'textchat', {
