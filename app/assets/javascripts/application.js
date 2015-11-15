@@ -42,6 +42,7 @@ $(document).on('ready page:load', function () {
     }
 
   });
+
     var options = {
       valueNames: ['name'],
       plugins: [ ListFuzzySearch() ]
