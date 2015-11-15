@@ -55,7 +55,7 @@ class MatchesController < ApplicationController
 
   def update
     if @match.update_attribute(:active, true)
-      flash.now[:success] = "You have a match!"
+      flash[:success] = "You have a match!"
       @match = nil
     else
       flash.now[:alert] = "Oh no"
