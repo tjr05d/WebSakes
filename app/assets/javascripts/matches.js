@@ -34,10 +34,10 @@ clicking = function(){
       }
 
       session.on('streamCreated', function(event) {
-      session.subscribe(event.stream, 'subscriber', {
+      session.subscribe(event.stream, 'textchat', {
       insertMode: 'append',
-      width: '100%',
-      height: '100%'
+      width: 400,
+      height: 300
   });
 });
 
