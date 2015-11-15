@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'rails'
 
 gem 'bcrypt'
-gem 'puma'
+# gem 'puma'
 gem 'sass'
 gem 'bootstrap-sass'
 gem 'sass-rails',           '5.0.3'
