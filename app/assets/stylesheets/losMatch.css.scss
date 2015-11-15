@@ -173,11 +173,16 @@ body.losMatch {
     -moz-box-shadow: 0 5px 30px rgba(0, 0, 0, 0.7);
     -webkit-box-shadow: 0 5px 30px rgba(0, 0, 0, 0.7);
     box-shadow: 0 5px 30px rgba(0, 0, 0, 0.7);
-    padding: 30px 10px;
+    padding: 15px 10px;
     font-size: 2em;
     text-align: justify;
     background-color:#D3CBBD;
     border-radius: 5px;
+    text-transform: lowercase;
+  }
+
+  #chatIcons {
+    text-align: center;
   }
 
   #front {
@@ -202,6 +207,7 @@ body.losMatch {
     -webkit-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);
     border-radius: 5px;
+    text-transform: capitalize;
   }
 
   #card {
@@ -276,7 +282,6 @@ body.losMatch {
     display:block;
     padding:10px;
     box-shadow: inset 0 1px 0 #fff;
-    text-transform: capitalize;
   }
 
 
