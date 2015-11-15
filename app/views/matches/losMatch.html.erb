@@ -1,21 +1,23 @@
 <body class="losMatch">
-<h1>Matches</h1>
+<h1>Connections</h1>
 
 <h2><%= current_user.first_name.capitalize %> you have <%= pluralize(@combined_matches.count, "match") %></h2>
   <span id="thumbsUp"><%= link_to matches_show_path do %>
       <i class="thumIcon fa fa-thumbs-o-up fa-5x"></i>
-      <div id="hover1">Find more matches!</div>
+      <div id="hover1">Find more connection!</div>
     <%end%>
   </span>
-  <div id="test-list">
 
-    <div class='container-fluid'>
-      <div class='search-container'>
+  <div id="test-list">
+    <div class='search-container'>
         <input placeholder='search' type='text' class="fuzzy-search">
         <a class='button'>
           <i class='fa fa-search'></i>
         </a>
       </div>
+
+    <div class='container-fluid'>
+  </div>
 
   <% if @combined_matches.count == 0 %>
   <div class="text-center">
@@ -158,11 +160,7 @@
 
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
   <div class="modal-dialog modal-lg">
-    <div>
 
-
-
-  </div>
     <div class="modal-content">
 
       <div class="modal-header">

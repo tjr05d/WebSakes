@@ -1,10 +1,11 @@
 <%= provide(:title, current_user.first_name)%>
 <body class="swipecard">
 <div style="text-align: center;">
-  <h1>Find Match</h1>
+
+  <h1>Expand Your Network</h1>
     <span class=""><%= link_to match_path, style: "color:#FFF;" do %>
-        <i class="searchPlus fa fa-search-plus fa-3x"></i>
-        <div id="hover5">See matches!</div>
+        <i class="searchPlus fa fa-newspaper-o fa-3x"></i>
+        <div id="hover5">See your Connections!</div>
       <%end%>
     </span>
   <% if @potential_connection.nil?%>
@@ -17,7 +18,7 @@
 
             <section id="elSection">
               <div id="gravatar">
-                <%= gravatar_for @potential_connection%>
+                <%= gravatar_for(@potential_connection)%>
               </div>
 
               <div id="showName">
@@ -34,18 +35,18 @@
 
             </section>
           </ul>
-
+      <div id="elChoice">
         <span id="thumbsDown">
           <%= link_to matches_show_path, class: "but-nope" do %>
-            <i class="fa fa-thumbs-o-down fa-5x"></i>
+            <i class="fa fa-times-circle-o fa-4x"></i>
           <% end %>
         </span>
         <span id="thumbsUp"><%= link_to user_yes_path(@potential_connection.id),
           :method => "user_clicks_button_to_connect", class: "but-yay" do %>
-            <i class="fa fa-thumbs-o-up fa-5x"></i>
+            <i class="fa fa-thumbs-o-up fa-4x"></i>
           <%end%>
         </span>
-
+      </div>
         </div>
       </section>
   <% end %>

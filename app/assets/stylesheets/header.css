@@ -1,6 +1,6 @@
 
 #navbar{
-  overflow:hidden;
+    overflow:hidden;
     width:200px;
     height:100%;
     position:fixed;
@@ -16,9 +16,9 @@
     left: -110px;
     width: 160px;
     height: 100%;
-    background:#424E4F;
+    /*background:#424E4F;*/
     z-index:500;
-    border: 1px solid white;
+    /*border: 1px solid white;*/
 }
 #primary_nav ul{
     display: block;

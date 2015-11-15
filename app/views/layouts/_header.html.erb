@@ -1,11 +1,12 @@
-<% if logged_in? == true%>
+<% if logged_in?%>
   <nav id="primary_nav">
     <a href="#" id="mobile_nav">&#9776;</a>
       <ul>
-        <li><%= link_to "Matches", match_path %></li>
-        <li><%= link_to "Update", edit_path(current_user) %></li>
+        <li><%= link_to "Connect", matches_show_path %></li>
+        <li><%= link_to "Cards", match_path %></li>
+        <li><%= link_to "Profile", edit_path(current_user) %></li>
         <li><%= link_to "Contact", contact_path %></li>
-        <li><%= link_to "About", about_path %></li>
+        <li><%= link_to "About Us", about_path %></li>
         <li><%= link_to "Log out", logout_path, method: "delete" %></li>
       </ul>
   </nav>

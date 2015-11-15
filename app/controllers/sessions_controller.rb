@@ -13,11 +13,7 @@ class SessionsController < ApplicationController
       # we want to check if the checkbox of remember_me = '1'
       # if is, we want to remember(user) else forget(user
       params[:session][:remember_me] ? remember(user) : forget(user)
-      if @potential_connection.nil?
-        redirect_to match_path
-      else
-        redirect_to matches_show_path
-      end
+      redirect_to matches_show_path
       flash[:success] =  "Weclome #{current_user.first_name}  😃  😃  😃  😃 "
     else
       flash.now[:danger] = "Invalid Email/Password combination "

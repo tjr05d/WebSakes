@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20151114004353) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "matches", id: false, force: :cascade do |t|
+  create_table "matches", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "connection_id"
     t.boolean  "active",        default: false
