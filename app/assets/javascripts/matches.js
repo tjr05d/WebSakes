@@ -1,9 +1,11 @@
 clicking = function(){
-
+  for (i = 0; i < '<%= #of matches %> '; i ++) {
+  $('#AddIds').append('<span class = "startSession id ="ID'+ i +'" data-session = "<%= match.session_id %>" data-token= "<%= match.token%>">')
+  }
  // var session = OT.initSession(apiKey, sessionID);
 
  $('#startSession').on('click', function (){
-   console.log("session started");
+   console.log(this.getAttribute("data-session"));
    var session = OT.initSession(apiKey, sessionID);
    session.connect(token, function(error) {
      if (error) {
