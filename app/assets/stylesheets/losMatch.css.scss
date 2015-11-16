@@ -314,6 +314,7 @@ body.losMatch {
       color: #00FF00;
       text-align: right;
       margin-right: 10px;
+
   }
 
   #history .theirs {
@@ -325,5 +326,13 @@ body.losMatch {
     background-color: red;
 
   }
+  #subscriber {
+    height: 250px;
+    width: 350px;
+  }
 
+  #publisherElement {
+    height: 250px;
+    width: 350px;
+  }
 }
