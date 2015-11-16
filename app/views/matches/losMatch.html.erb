@@ -27,15 +27,15 @@
   </div>
   <% else %>
   <div class="list">
+
+    <% i = 0 %>
   <% @combined_matches.each do |match| %>
     <%if match.user.id != current_user.id %>
         <li>
             <div id='card'>
               <script type="text/javascript"> var apiKey = '<%= @api_key%>'</script>
 
-              <script type="text/javascript"> var sessionID = '<%= match.session_id %>' </script>
-
-              <script type="text/javascript"> var token = '<%= match.token%>' </script>
+              <script type="text/javascript"> var combined_matches = '<%= @combined_matches %>' </script>
 
               <div id='front'>
                 <div class="logo"><span class="fat"><%= match.user.first_name.chars.first.upcase %></span><span class="skinny"><%= match.user.last_name.chars.first.upcase%></span>
@@ -72,11 +72,13 @@
                         <i class="fa fa-envelope"></i><%= mail_to match.user.email.downcase %>
                       </div>
                       <div id="chatIcons">
-                        <span id = "startSession">
+
+                        <span class = "startSession" id = "ID<%= i %>"  data-session= "<%= match.session_id %>" data-token= "<%= match.token%>">
                           <button class="btn btn-primary">
                             <i class="fa fa-user" aria-hidden="true"></i>
                           </button>
                         </span>
+
 
                         <span id = "textChat">
                           <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">
@@ -88,16 +90,12 @@
                  </div>
             </div>
           </li>
-
+          <% i += 1%>
       <% else %>
 
       <li>
           <div id='card'>
             <script type="text/javascript"> var apiKey = '<%= @api_key%>'</script>
-
-            <script type="text/javascript"> var sessionID = '<%= match.session_id %>' </script>
-
-            <script type="text/javascript"> var token = '<%= match.token%>' </script>
 
             <div id='front'>
               <div class="logo"><span class="fat"><%= match.connection.first_name.chars.first.upcase %></span><span class="skinny"><%= match.connection.last_name.chars.first.upcase%></span>
@@ -137,11 +135,14 @@
                       </div>
 
                       <div id="chatIcons">
+
+                      <div id = "AddButtonIDs">
                         <span id = "startSession">
                           <button class="btn btn-primary">
                             <i class="fa fa-user" aria-hidden="true"></i>
                           </button>
                         </span>
+                      </div>
 
                         <span id = "textChat">
                           <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">
@@ -154,6 +155,7 @@
               </div>
             </div>
         </li>
+        <% i += 1%>
 
     <%end%>
   <%end%>
@@ -168,7 +170,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title">Let's Talk</h4>
 
-       <!--  <span id = "startChat">
+        <span id = "startChat">
           <button>
               <span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span>
           </button>
@@ -178,13 +180,13 @@
           <button> End Chat </button>
         </span>
       </div>
- -->
+
       <div class="modal-body">
         <div id="textchat">
           <p id="history"></p>
           <div>
-            <span id = "theirVideo" style ="height:200px; width:300px;"> </span>
-            <span id = "yourVideo" syle =" height 200px; width:300px; "> </span>
+            <span id = "subscriber" style ="height:200px; width:300px;"> </span>
+            <span id = "publisherElement" syle =" height 200px; width:300px; "> </span>
         </div>
       </div>
 

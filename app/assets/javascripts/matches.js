@@ -2,7 +2,14 @@ clicking = function(){
 
  // var session = OT.initSession(apiKey, sessionID);
 
- $('#startSession').on('click', function (){
+ // for (i =0; i < combined_matches.length ; i++) {
+
+
+ $('.startSession').on('click', function (){
+   console.log(this.getAttribute("data-session"))
+   console.log(this.getAttribute("data-token"))
+   var sessionID = this.getAttribute("data-session");
+   var token = this.getAttribute("data-token");
    console.log("session started");
    var session = OT.initSession(apiKey, sessionID);
    session.connect(token, function(error) {
@@ -12,9 +19,9 @@ clicking = function(){
      // This example assumes that a DOM element with the ID 'publisherElement' exists
        $('#startChat').on('click', function() {
         //  $('#myModal').modal('show');
-       var publisherProperties = {width: 400, height:300, name:"Tim's stream"};
+       var publisherProperties = {width: 300, height:200, name:"Tim's stream"};
 
-       publisher = OT.initPublisher('textchat', publisherProperties);
+       publisher = OT.initPublisher('publisherElement', publisherProperties);
 
        session.publish(publisher);
 
@@ -25,7 +32,7 @@ clicking = function(){
       }
 
       session.on('streamCreated', function(event) {
-      session.subscribe(event.stream, 'textchat', {
+      session.subscribe(event.stream, 'subscriber', {
       insertMode: 'append',
       width: 400,
       height: 300
@@ -62,5 +69,6 @@ clicking = function(){
     });
 })
 }
+
 $(document).ready(clicking);
 $(document).on('page:load', clicking);
