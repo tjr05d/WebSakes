@@ -4,7 +4,9 @@
 
 #events .calendar {
   border-collapse: collapse;
-  width: 90%;
+  width: 75%;
+  margin: auto;
+
 
   td, th {
     font-family: 'Arvo', serif;
@@ -23,7 +25,7 @@
   td {
     background: #FFF;
     color: #777;
-    height: 80px;
+    height: 100px;
     vertical-align: top;
     font-size: 16px;
   }
