@@ -2,12 +2,21 @@
 <html>
 <head>
   <title><%= full_title(yield(:title)) %></title>
+<<<<<<< HEAD
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+=======
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <script src="https://static.opentok.com/v2/js/opentok.min.js"></script>
+>>>>>>> f80c0f075d1f9bd0560e1dd745c2ac963ca00c11
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <link href='https://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <link href='https://fonts.googleapis.com/css?family=Vollkorn:400,700' rel='stylesheet' type='text/css'>
+
+</head>
+
 <body>
   <%= render "layouts/header"%>
   <div class="">
@@ -18,9 +27,10 @@
     <% end %>
     <%= yield %>
   </div>
-  <script src="http://www.listjs.com/no-cdn/list.fuzzysearch.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-  <script src="http://listjs.com/no-cdn/list.js"></script>
-  <script src="http://listjs.com/no-cdn/list.fuzzysearch.js"></script>
+
+  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.1.1/list.min.js"></script>
+  <script src="https://rawgit.com/javve/list.fuzzysearch.js/v0.1.0/dist/list.fuzzysearch.min.js"></script>
+
 </body>
 </html>

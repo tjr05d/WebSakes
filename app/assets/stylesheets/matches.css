@@ -1,0 +1,41 @@
+#startSession {
+
+}
+
+#textchat {
+    position: relative;
+    width: 100%;
+    float: right;
+    right: 0;
+    height: 100%;
+    background-color: white;
+}
+
+#history {
+   width: 100%;
+   height: calc(100% - 40px);
+   overflow: auto;
+}
+
+input#msgTxt {
+  height: 40px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+#history .mine {
+    color: #00FF00;
+    text-align: right;
+    margin-right: 10px;
+}
+
+#history .theirs {
+    color: #00FFFF;
+    margin-left: 10px;
+}
+
+#textChat button span {
+  background-color: red;
+
+}

@@ -1,22 +1,23 @@
 <body class="losMatch">
-<h1>Matches</h1>
+<h1>Connections</h1>
 
 <h2><%= current_user.first_name.capitalize %> you have <%= pluralize(@combined_matches.count, "match") %></h2>
   <span id="thumbsUp"><%= link_to matches_show_path do %>
       <i class="thumIcon fa fa-thumbs-o-up fa-5x"></i>
-      <div id="hover1">Find more matches!</div>
+      <div id="hover1">Find more connection!</div>
     <%end%>
   </span>
-  <div id="test-list">
 
-    <div class='container-fluid'>
-      <div class='search-container'>
+  <div id="test-list">
+    <div class='search-container'>
         <input placeholder='search' type='text' class="fuzzy-search">
         <a class='button'>
           <i class='fa fa-search'></i>
         </a>
       </div>
-    </div>
+
+    <div class='container-fluid'>
+  </div>
 
   <% if @combined_matches.count == 0 %>
   <div class="text-center">
@@ -30,6 +31,12 @@
     <%if match.user.id != current_user.id %>
         <li>
             <div id='card'>
+              <script type="text/javascript"> var apiKey = '<%= @api_key%>'</script>
+
+              <script type="text/javascript"> var sessionID = '<%= match.session_id %>' </script>
+
+              <script type="text/javascript"> var token = '<%= match.token%>' </script>
+
               <div id='front'>
                 <div class="logo"><span class="fat"><%= match.user.first_name.chars.first.upcase %></span><span class="skinny"><%= match.user.last_name.chars.first.upcase%></span>
                 </div>
@@ -52,7 +59,7 @@
                       <%end%>
                       <%if match.user.linkedin.present?%>
                       <div class="linkedin">
-                        <i class="fa fa-linkedin-square"></i><a href="https://twitter.com/<%= match.user.linkedin%>" target="_blank"><%= match.user.linkedin%>
+                        <i class="fa fa-linkedin-square"></i><a href="https://www.linkedin.com/in/<%= match.user.linkedin%>" target="_blank"><%= match.user.linkedin%>
                         </a>
                       </div>
                       <%end%>
@@ -62,7 +69,20 @@
                       </div>
                       <%end%>
                       <div class="email">
-                        <i class="fa fa-envelope"></i><%= mail_to match.user.email %>
+                        <i class="fa fa-envelope"></i><%= mail_to match.user.email.downcase %>
+                      </div>
+                      <div id="chatIcons">
+                        <span id = "startSession">
+                          <button class="btn btn-primary">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                          </button>
+                        </span>
+
+                        <span id = "textChat">
+                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">
+                            <i class="fa fa-video-camera"aria-hidden="true"></i>
+                          </button>
+                        </span>
                       </div>
                     </section>
                  </div>
@@ -73,6 +93,12 @@
 
       <li>
           <div id='card'>
+            <script type="text/javascript"> var apiKey = '<%= @api_key%>'</script>
+
+            <script type="text/javascript"> var sessionID = '<%= match.session_id %>' </script>
+
+            <script type="text/javascript"> var token = '<%= match.token%>' </script>
+
             <div id='front'>
               <div class="logo"><span class="fat"><%= match.connection.first_name.chars.first.upcase %></span><span class="skinny"><%= match.connection.last_name.chars.first.upcase%></span>
               </div>
@@ -107,7 +133,21 @@
                       </div>
                       <%end%>
                       <div class="email">
-                        <i class="fa fa-envelope"></i><%= mail_to match.connection.email %>
+                        <i class="fa fa-envelope"></i><%= mail_to match.connection.email.downcase %>
+                      </div>
+
+                      <div id="chatIcons">
+                        <span id = "startSession">
+                          <button class="btn btn-primary">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                          </button>
+                        </span>
+
+                        <span id = "textChat">
+                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">
+                            <i class="fa fa-video-camera"aria-hidden="true"></i>
+                          </button>
+                        </span>
                       </div>
                     </section>
 
@@ -118,5 +158,44 @@
     <%end%>
   <%end%>
   </div>
+
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg">
+
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Let's Talk</h4>
+
+       <!--  <span id = "startChat">
+          <button>
+              <span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span>
+          </button>
+        </span>
+
+        <span id = "endChat">
+          <button> End Chat </button>
+        </span>
+      </div>
+ -->
+      <div class="modal-body">
+        <div id="textchat">
+          <p id="history"></p>
+          <div>
+            <span id = "theirVideo" style ="height:200px; width:300px;"> </span>
+            <span id = "yourVideo" syle =" height 200px; width:300px; "> </span>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <form>
+            <input type="text" placeholder="Say Something!" id="msgTxt"></input>
+        </form>
+    </div>
+    </div>
+  </div>
+</div>
+
 <%end%>
 </body>

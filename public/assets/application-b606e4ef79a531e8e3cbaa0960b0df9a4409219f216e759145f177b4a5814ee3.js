@@ -14004,165 +14004,302 @@ if (typeof jQuery === 'undefined') {
   };
 
 }).call(this);
-// Cardswipe effect
-(function(){
-  var animating = false;
+  $(document).on('ready page:load', function () {
+  // Cardswipe effect
+  // (function(){
+    var animating = false;
 
-  function animatecard(ev) {
-    if (animating === false) {
-      var t = ev.target;
-      if (t.className === 'but-nope') {
-        t.parentNode.classList.add('nope');
-        animating = true;
-        fireCustomEvent('nopecard',
-          {
-            origin: t,
-            container: t.parentNode,
-            card: t.parentNode.querySelector('.card')
-          }
-        );
-      }
-      if (t.className === 'but-yay') {
-        t.parentNode.classList.add('yes');
-        animating = true;
-        fireCustomEvent('yepcard',
-          {
-            origin: t,
-            container: t.parentNode,
-            card: t.parentNode.querySelector('.card')
-          }
-        );
-      }
-      if (t.classList.contains('current')) {
-        fireCustomEvent('cardchosen',
-          {
-            container: getContainer(t),
-            card: t
-          }
-        );
-      }
-    }
-  }
-
-  function fireCustomEvent(name, payload) {
-    var newevent = new CustomEvent(name, {
-      detail: payload
-    });
-    document.body.dispatchEvent(newevent);
-  }
-
-  function getContainer(elm) {
-    var origin = elm.parentNode;
-    if (!origin.classList.contains('cardcontainer')){
-      origin = origin.parentNode;
-    }
-    return origin;
-  }
-
-  function animationdone(ev) {
-    animating = false;
-    var origin = getContainer(ev.target);
-    if (ev.animationName === 'yay') {
-      origin.classList.remove('yes');
-    }
-    if (ev.animationName === 'nope') {
-      origin.classList.remove('nope');
-    }
-    if (origin.classList.contains('list')) {
-      if (ev.animationName === 'nope' ||
-          ev.animationName === 'yay') {
-        origin.querySelector('.current').remove();
-        if (!origin.querySelector('.card')) {
-          fireCustomEvent('deckempty', {
-            origin: origin.querySelector('button'),
-            container: origin,
-            card: null
-          });
-        } else {
-          origin.querySelector('.card').classList.add('current');
+    function animatecard(ev) {
+      if (animating === false) {
+        var t = ev.target;
+        if (t.className === 'but-nope') {
+          t.parentNode.classList.add('nope');
+          animating = true;
+          fireCustomEvent('nopecard',
+            {
+              origin: t,
+              container: t.parentNode,
+              card: t.parentNode.querySelector('.card')
+            }
+          );
+        }
+        if (t.className === 'but-yay') {
+          t.parentNode.classList.add('yes');
+          animating = true;
+          fireCustomEvent('yepcard',
+            {
+              origin: t,
+              container: t.parentNode,
+              card: t.parentNode.querySelector('.card')
+            }
+          );
+        }
+        if (t.classList.contains('current')) {
+          fireCustomEvent('cardchosen',
+            {
+              container: getContainer(t),
+              card: t
+            }
+          );
         }
       }
     }
-  }
-  document.body.addEventListener('animationend', animationdone);
-  document.body.addEventListener('webkitAnimationEnd', animationdone);
-  document.body.addEventListener('click', animatecard);
-})();
-// cardwipe effect
-(function(){
 
-  var all = 0;
-  var results = document.querySelector('#results');
-  var counter = document.querySelector('#counter');
-
-  function updatecounter() {
-    --all;
-    counter.innerHTML = all;
-  }
-
-  document.body.addEventListener('yepcard', function(ev) {
-    results.innerHTML += '<li>'+ev.detail.card.innerHTML+'</li>';
-    updatecounter();
-  });
-
-  document.body.addEventListener('nopecard', function(ev) {
-    updatecounter();
-  });
-
-  document.body.addEventListener('deckempty', function(ev) {
-    results.classList.add('live');
-    ev.detail.container.style.display = 'none';
-  });
-
-  window.addEventListener('load', function(ev) {
-    if ('content' in document.createElement('template')) {
-      var t = document.querySelector('template');
-      var list = t.parentNode;
-      var contents = t.innerHTML;
-      list.removeChild(t);
-      list.innerHTML += contents;
+    function fireCustomEvent(name, payload) {
+      var newevent = new CustomEvent(name, {
+        detail: payload
+      });
+      document.body.dispatchEvent(newevent);
     }
-    all = document.body.querySelectorAll('.card').length + 1;
-    updatecounter();
-  });
 
-})();
-// cardswipe effect
-(function(){
+    function getContainer(elm) {
+      var origin = elm.parentNode;
+      if (!origin.classList.contains('cardcontainer')){
+        origin = origin.parentNode;
+      }
+      return origin;
+    }
 
-  var all = 0;
-  var results = document.querySelector('#results');
-  var counter = document.querySelector('#counter');
+    function animationdone(ev) {
+      animating = false;
+      var origin = getContainer(ev.target);
+      if (ev.animationName === 'yay') {
+        origin.classList.remove('yes');
+      }
+      if (ev.animationName === 'nope') {
+        origin.classList.remove('nope');
+      }
+      if (origin.classList.contains('list')) {
+        if (ev.animationName === 'nope' ||
+            ev.animationName === 'yay') {
+          origin.querySelector('.current').remove();
+          if (!origin.querySelector('.card')) {
+            fireCustomEvent('deckempty', {
+              origin: origin.querySelector('button'),
+              container: origin,
+              card: null
+            });
+          } else {
+            origin.querySelector('.card').classList.add('current');
+          }
+        }
+      }
+    }
+  // document.body.addEventListener('animationend', animationdone);
+  // document.body.addEventListener('webkitAnimationEnd', animationdone);
+  // document.body.addEventListener('click', animatecard);
+  // })();
+});
+  $(document).on('ready page:load', function () {
+// cardwipe effect
+  // (function(){
 
-  function updatecounter() {
-    --all;
-    counter.innerHTML = all;
-  }
+    var all = 0;
+    var results = document.querySelector('#results');
+    var counter = document.querySelector('#counter');
 
-  document.body.addEventListener('yepcard', function(ev) {
-    results.innerHTML += '<li>'+ev.detail.card.innerHTML+'</li>';
-    updatecounter();
-  });
+    function updatecounter() {
+      --all;
+      counter.innerHTML = all;
+    }
 
-  document.body.addEventListener('nopecard', function(ev) {
-    updatecounter();
-  });
+    document.body.addEventListener('yepcard', function(ev) {
+      results.innerHTML += '<li>'+ev.detail.card.innerHTML+'</li>';
+      updatecounter();
+    });
 
-  document.body.addEventListener('deckempty', function(ev) {
-    results.classList.add('live');
-    ev.detail.container.style.display = 'none';
-  });
+    document.body.addEventListener('nopecard', function(ev) {
+      updatecounter();
+    });
 
-  window.addEventListener('load', function(ev) {
-    all = document.body.querySelectorAll('.card').length + 1;
-    updatecounter();
-  });
+    document.body.addEventListener('deckempty', function(ev) {
+      results.classList.add('live');
+      ev.detail.container.style.display = 'none';
+    });
 
-})();
+    // window.addEventListener('load', function(ev) {
+    //   if ('content' in document.createElement('template')) {
+    //     var t = document.querySelector('template');
+    //     var list = t.parentNode;
+    //     var contents = t.innerHTML;
+    //     list.removeChild(t);
+    //     list.innerHTML += contents;
+    //   }
+    //   all = document.body.querySelectorAll('.card').length + 1;
+    //   updatecounter();
+    // });
+  // })();
+});
+// $(document).on('ready page:load', function () {
+
+// // cardswipe effect
+// // (function(){
+
+
+//   var results = document.querySelector('#results');
+//   var counter = document.querySelector('#counter');
+
+
+//   document.body.addEventListener('yepcard', function(ev) {
+//     results.innerHTML += '<li>'+ev.detail.card.innerHTML+'</li>';
+//     updatecounter();
+//   });
+
+//   document.body.addEventListener('nopecard', function(ev) {
+//     updatecounter();
+//   });
+
+//   document.body.addEventListener('deckempty', function(ev) {
+//     results.classList.add('live');
+//     ev.detail.container.style.display = 'none';
+//   });
+
+//   window.addEventListener('load', function(ev) {
+//     all = document.body.querySelectorAll('.card').length + 1;
+//     updatecounter();
+//   });
+// // })();
+// });
 (function() {
 
 
 }).call(this);
+// var apiKey = '45406182'; // Replace with your API key. See https://dashboard.tokbox.com/projects
+//  var sessionID = '1_MX40NTQwNjE4Mn5-MTQ0NzM4MDU1MjkzMX5FL2QwL291ZHljdjVUNG9MK0YrZklBMDJ-fg'; // Replace with your own session ID.
+//                      // See https://dashboard.tokbox.com/projects
+//  var token = 'T1==cGFydG5lcl9pZD00NTQwNjE4MiZzaWc9ZTlhNTQwZjc0NTc5MzZlZWE4MWVhZGMyYWU4NTk2MTZlNzI3MTE5YTpyb2xlPXB1Ymxpc2hlciZzZXNzaW9uX2lkPTFfTVg0ME5UUXdOakU0TW41LU1UUTBOek00TURVMU1qa3pNWDVGTDJRd0wyOTFaSGxqZGpWVU5HOU1LMFlyWmtsQk1ESi1mZyZjcmVhdGVfdGltZT0xNDQ3MzgwNTk1Jm5vbmNlPTAuNTI2NjkxNjQ4NzUwOTQxNyZleHBpcmVfdGltZT0xNDQ3OTg1MzQ3JmNvbm5lY3Rpb25fZGF0YT0='; // Replace with a generated token that has been assigned the moderator role.
+//                  // See https://dashboard.tokbox.com/projects
+
+// clicking = function(){
+//  var session = OT.initSession(apiKey, sessionID);
+//  $('#startSession').on('click', function (){
+//   console.log("session started");
+//    session.connect(token, function(error) {
+//    if (error) {
+//      console.log(error.message);
+//    } else {
+//      // This example assumes that a DOM element with the ID 'publisherElement' exists
+//      $('#startChat').on('click', function() {
+//      var publisherProperties = {width: 400, height:300, name:"Bob's stream"};
+//      publisher = OT.initPublisher('', publisherProperties);
+//      session.publish(publisher);
+//      $('#endChat').on('click', function(){
+//        publisher.destroy();
+//      });
+//    });
+//    }
+//  });
+//  });
+//
+//  session.on('streamCreated', function(event) {
+//    var subscriberProperties = {insertMode: 'append'};
+//    var subscriber = session.subscribe(event.stream,
+//      'subscriberContainer',
+//      subscriberProperties,
+//      function (error) {
+//        if (error) {
+//          console.log(error);
+//        } else {
+//
+//          console.log('Subscriber added.');
+//        }
+//    });
+//  });
+// }
+//
+//
+// $(document).ready(clicking);
+// $(document).on('page:load', clicking);
+
+ // session.on('streamCreated', function(event) {
+ //   var subscriberProperties = {insertMode: 'append'};
+ //   var subscriber = session.subscribe(event.stream,
+ //     'subscriberContainer',
+ //     subscriberProperties,
+ //     function (error) {
+ //       if (error) {
+ //         console.log(error);
+ //       } else {
+ //
+ //         console.log('Subscriber added.');
+ //       }
+ //   });
+ // });
+// var apiKey = @api_key
+// // '45406182';
+//
+// var sessionID = @session.session_id
+//  // '1_MX40NTQwNjE4Mn5-MTQ0NzM4MDU1MjkzMX5FL2QwL291ZHljdjVUNG9MK0YrZklBMDJ-fg';
+//
+// var token = @token
+//  // 'T1==cGFydG5lcl9pZD00NTQwNjE4MiZzaWc9ZTlhNTQwZjc0NTc5MzZlZWE4MWVhZGMyYWU4NTk2MTZlNzI3MTE5YTpyb2xlPXB1Ymxpc2hlciZzZXNzaW9uX2lkPTFfTVg0ME5UUXdOakU0TW41LU1UUTBOek00TURVMU1qa3pNWDVGTDJRd0wyOTFaSGxqZGpWVU5HOU1LMFlyWmtsQk1ESi1mZyZjcmVhdGVfdGltZT0xNDQ3MzgwNTk1Jm5vbmNlPTAuNTI2NjkxNjQ4NzUwOTQxNyZleHBpcmVfdGltZT0xNDQ3OTg1MzQ3JmNvbm5lY3Rpb25fZGF0YT0=';
+
+clicking = function(){
+
+ // var session = OT.initSession(apiKey, sessionID);
+
+ $('#startSession').on('click', function (){
+   console.log("session started");
+   var session = OT.initSession(apiKey, sessionID);
+   session.connect(token, function(error) {
+     if (error) {
+       console.log(error.message);
+     } else {
+     // This example assumes that a DOM element with the ID 'publisherElement' exists
+       $('#startChat').on('click', function() {
+        //  $('#myModal').modal('show');
+       var publisherProperties = {width: 400, height:300, name:"Tim's stream"};
+
+       publisher = OT.initPublisher('textchat', publisherProperties);
+
+       session.publish(publisher);
+
+       $('#endChat').on('click', function(){
+         publisher.destroy();
+       });
+      });
+      }
+
+      session.on('streamCreated', function(event) {
+      session.subscribe(event.stream, 'textchat', {
+      insertMode: 'append',
+      width: 400,
+      height: 300
+  });
+});
+
+  var form = document.querySelector('form');
+  var msgTxt = document.querySelector('#msgTxt');
+
+    form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    session.signal({
+      type: 'chat',
+      data: msgTxt.value
+    },
+    function(error) {
+      if (!error) {
+        msgTxt.value = '';
+      }
+    });
+  });
+
+
+ var msgHistory = document.querySelector('#history');
+
+   session.on('signal:chat', function(event) {
+   var msg = document.createElement('p');
+   msg.innerHTML = event.data;
+   msg.className = event.from.connectionId === session.connection.connectionId ? 'mine' : 'theirs';
+   msgHistory.appendChild(msg);
+   msg.scrollIntoView();
+  });
+    });
+})
+}
+$(document).ready(clicking);
+$(document).on('page:load', clicking);
 (function() {
 
 
@@ -14190,15 +14327,6 @@ if (typeof jQuery === 'undefined') {
 
 
 
-// attempts at creating a click event to call method in the application controller
-// $(document).ready( function(){
-//
-//   $('#yes-button').click( function() {
-//
-//     console.log("yes button clicked");
-//   })
-//
-//   });
 
 $(document).on('ready page:load', function () {
   $(".toggleNav").click(function () {
@@ -14224,5 +14352,9 @@ $(document).on('ready page:load', function () {
     }
 
   });
-});
+    var monkeyList = new List('test-list', {
+      valueNames: ['name'],
+      plugins: [ ListFuzzySearch() ]
+    });
 
+});

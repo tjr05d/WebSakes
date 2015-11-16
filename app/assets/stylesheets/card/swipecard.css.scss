@@ -1,6 +1,6 @@
 body.swipecard {
 
-  h1{color:#fff;}
+  h1{color:rgba(255, 255, 255, 0.4);}
 
   #hover5 {
     display: none;
@@ -21,6 +21,7 @@ body.swipecard {
   #thumbsUp {
     font-size: 2.2em;
     margin-right: .5em;
+    padding-left: 5%;
     &#thumbsUp i{
       color:green;
     }
@@ -28,10 +29,11 @@ body.swipecard {
 
   #thumbsDown {
       font-size: 2.2em;
-    }
-  #thumbsDown i {
+      padding-right: 5%;
+    &#thumbsDown i {
       color:red;
     }
+  }
 
   #elSection {
     border-radius: 2%;
@@ -78,6 +80,9 @@ body.swipecard {
   .list ul.cardlist {
     margin: 0 0 10px 0;
     height: 350px;
+  }
+  ul.cardlist{
+    padding:0;
   }
 
   .but-nope::after {

@@ -1,121 +1,4 @@
-/* line 1, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/business.css.scss */
-* {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-/* line 7, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/business.css.scss */
-.business {
-  float: left;
-}
-
-/* line 11, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/business.css.scss */
-#back {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 230px;
-  width: 350px;
-  background: white;
-  -moz-transform: rotateY(180deg);
-  -webkit-transform: rotateY(180deg);
-  transform: rotateY(180deg);
-  -moz-transform-style: preserve-3d;
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  -moz-backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -moz-transition: all 0.4s ease-in-out;
-  -o-transition: all 0.4s ease-in-out;
-  -webkit-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
-  -moz-box-shadow: 0 5px 30px rgba(0, 0, 0, 0.7);
-  -webkit-box-shadow: 0 5px 30px rgba(0, 0, 0, 0.7);
-  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.7);
-  padding: 35px 15px;
-  font-size: 2em;
-  text-align: justify;
-}
-
-/* line 39, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/business.css.scss */
-#front {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 350px;
-  height: 230px;
-  background: #ED5F55;
-  padding-top: 1px;
-  -moz-transform-style: preserve-3d;
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  -moz-backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -moz-transition: all 0.4s ease-in-out;
-  -o-transition: all 0.4s ease-in-out;
-  -webkit-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
-  -moz-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);
-  -webkit-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);
-}
-
-/* line 61, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/business.css.scss */
-#front h1 {
-  text-align: center;
-  color: white;
-  margin-top: 45px;
-  text-shadow: 0 1px 0 #326773;
-}
-
-/* line 68, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/business.css.scss */
-#card {
-  margin: 30px auto 0;
-  position: relative;
-  width: 400px;
-  height: 230px;
-  cursor: pointer;
-  -moz-perspective: 600px;
-  -webkit-perspective: 600px;
-  perspective: 600px;
-}
-
-/* line 78, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/business.css.scss */
-#card:hover #front {
-  -moz-transform: rotateY(50deg);
-  -webkit-transform: rotateY(50deg);
-  transform: rotateY(50deg);
-}
-
-/* line 83, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/business.css.scss */
-#card:hover #back {
-  -moz-transform: rotateY(0deg);
-  -webkit-transform: rotateY(0deg);
-  transform: rotateY(0deg);
-}
-/* Card design */
-
-.card {
-  font-size: 14px;
-  line-height: 200px;
-  text-align:center;
-  width: 150px;
-  height: 200px;
-  display: block;
-  background: #666;
-  -webkit-transform-origin: 50% 99%;
-  transform-origin: 50% 99%;
-}
-.cardcontainer {
-  padding: 10px;
-  text-align: center;
-  width: 150px;
-}
-
-/* List functionality */
+/*
 .list .cardlist {
   margin: 0;
   padding: 0;
@@ -127,44 +10,6 @@
   display: block;
 }
 
-/* Buttons */
-
-button {
-  background: #0c0;
-  border: none;
-  color: #fff;
-  border-radius: 50% 50%;
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
-  margin: 0 .5em;
-  display: inline-block;
-}
-button:focus {
-  outline: 0;
-  background: #0f0;
-}
-.but-nope {
-  background: #c00;
-}
-.but-nope:focus {
-  outline: 0;
-  background: #f00;
-}
-
-.cardcontainer.yes .card {
-  -webkit-animation: yay 0.7s ease-out;
-  animation: yay 0.7s ease-out;
-}
-.cardcontainer.nope .card {
-  -webkit-animation: nope 0.7s ease-out;
-  animation: nope 0.7s ease-out;
-}
-
-
-/*
-  Animations
-*/
 
 @keyframes yay {
   from {
@@ -209,54 +54,104 @@ button:focus {
     opacity: 0;
   }
 }
-body {
-  font-family: helvetica, arial, sans-serif;
-  background: #333;
-  color: #ccc;
-  font-size: 16px;
-  padding: 0;
-  margin: 0;
+*/
+/* line 3, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/card/swipecard.css.scss */
+body.swipecard h1 {
+  color: rgba(255, 255, 255, 0.4);
 }
-header, section, footer {
+/* line 5, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/card/swipecard.css.scss */
+body.swipecard #hover5 {
+  display: none;
+}
+/* line 8, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/card/swipecard.css.scss */
+body.swipecard .searchPlus:hover {
+  transform: scale(1);
+  bottom: -2%;
+  transition: transform .2s, opacity .2s;
+  font-size: 6em;
+}
+/* line 13, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/card/swipecard.css.scss */
+body.swipecard .searchPlus:hover.searchPlus:hover + #hover5 {
   display: block;
-  padding: 0.5em 1em;
+  color: #FF530D;
+  text-decoration: none;
+  font-size: 1.8rem;
 }
-header, footer {
-  background: #000;
-  background: linear-gradient(#111,#000);
+/* line 21, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/card/swipecard.css.scss */
+body.swipecard #thumbsUp {
+  font-size: 2.2em;
+  margin-right: .5em;
+  padding-left: 5%;
 }
-a {color: lime;}
-h1 {
-  color: #f8f8f8;
-  font-size: 24px;
-  font-weight: normal;
+/* line 25, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/card/swipecard.css.scss */
+body.swipecard #thumbsUp#thumbsUp i {
+  color: green;
+}
+/* line 30, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/card/swipecard.css.scss */
+body.swipecard #thumbsDown {
+  font-size: 2.2em;
+  padding-right: 5%;
+}
+/* line 33, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/card/swipecard.css.scss */
+body.swipecard #thumbsDown#thumbsDown i {
+  color: red;
+}
+/* line 38, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/card/swipecard.css.scss */
+body.swipecard #elSection {
+  border-radius: 2%;
+  width: 100%;
+  height: 100%;
+}
+/* line 44, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/card/swipecard.css.scss */
+body.swipecard img.gravatar {
+  text-align: center;
+  padding-top: 2em;
+  border-radius: 3em;
+  height: 10em;
+}
+/* line 51, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/card/swipecard.css.scss */
+body.swipecard #gravatar {
   text-align: center;
 }
-footer {
-  background: transparent;
-  clear: both;
-  font-size: 10px;
+/* line 55, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/card/swipecard.css.scss */
+body.swipecard #showName {
+  margin-top: 5%;
+  font-weight: 400;
+  font-size: 2.4em;
   text-align: center;
-  padding: 3em 0.5em 1em 0.5em;
+  position: relative;
+  margin-bottom: .35em;
 }
-.card {
-  color: #000;
-  width: 250px;
-  height: 300px;
+/* line 64, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/card/swipecard.css.scss */
+body.swipecard #elJob {
+  text-align: center;
+  color: #2a2b39;
+  font-size: 1.43em;
+  font-style: italic;
 }
-.cardcontainer {
-  width: 250px;
+/* line 71, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/card/swipecard.css.scss */
+body.swipecard #elCompany {
+  text-align: center;
+}
+/* line 74, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/card/swipecard.css.scss */
+body.swipecard .cardcontainer {
+  width: 350px;
   position: relative;
   overflow: hidden;
   margin: 0 auto;
 }
-.list ul.cardlist {
+/* line 80, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/card/swipecard.css.scss */
+body.swipecard .list ul.cardlist {
   margin: 0 0 10px 0;
-  height: 300px;
+  height: 350px;
 }
-img {display: block;}
-.but-nope::after {
-  content: 'nope';
+/* line 84, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/card/swipecard.css.scss */
+body.swipecard ul.cardlist {
+  padding: 0;
+}
+/* line 88, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/card/swipecard.css.scss */
+body.swipecard .but-nope::after {
+  content: 'Nope!';
   position: absolute;
   top: -35px;
   left: 20px;
@@ -269,12 +164,14 @@ img {display: block;}
   transition: 0.4s;
   opacity: 0;
 }
-.but-nope:hover::after {
+/* line 102, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/card/swipecard.css.scss */
+body.swipecard .but-nope:hover::after {
   opacity: 1;
   top: 35px;
 }
-.but-yay::after {
-  content: 'yep';
+/* line 106, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/card/swipecard.css.scss */
+body.swipecard .but-yay::after {
+  content: 'Yes!';
   position: absolute;
   top: -35px;
   right: 20px;
@@ -287,33 +184,10 @@ img {display: block;}
   transition: 0.4s;
   opacity: 0;
 }
-.but-yay:hover::after {
+/* line 120, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/card/swipecard.css.scss */
+body.swipecard .but-yay:hover::after {
   opacity: 1;
   top: 35px;
-}
-#results {
-  opacity: 0;
-  position: absolute;
-  top: -20000px;
-  transition: opacity 0.5s;
-  margin: 0;
-  padding: 0;
-}
-#results li {
-  margin: 0;
-  padding: 0 0 5px 5px;
-  list-style: none;
-  float: left;
-}
-#results.live {
-  top: 0;
-  position: relative;
-  opacity: 1;
-}
-#counter {
-  position: absolute;
-  bottom: 15px;
-  right: 15px;
 }
 @charset "UTF-8";
 /*!
@@ -9092,32 +8966,27 @@ body {
 }
 
 /* universal */
-/* line 10, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
-section {
-  overflow: auto;
-}
-
-/* line 14, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
+/* line 11, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
 textarea {
   resize: vertical;
 }
 
-/* line 18, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
+/* line 15, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
 .center {
   text-align: center;
 }
-/* line 20, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
+/* line 17, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
 .center h1 {
   margin-bottom: 10px;
 }
 
 /* typography */
-/* line 27, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
+/* line 24, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
 }
 
-/* line 31, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
+/* line 28, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
 h1 {
   font-size: 3em;
   letter-spacing: -2px;
@@ -9125,7 +8994,7 @@ h1 {
   text-align: center;
 }
 
-/* line 38, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
+/* line 35, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
 h2 {
   font-size: 1.2em;
   letter-spacing: -1px;
@@ -9135,54 +9004,34 @@ h2 {
   color: gray-light;
 }
 
-/* line 47, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
+/* line 44, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
 p {
   font-size: 1.1em;
   line-height: 1.7em;
 }
 
-/* footer */
-/* line 54, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
-footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid #fff;
-  color: #000;
-}
-/* line 59, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
-footer a {
-  color: gray;
-}
-/* line 61, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
-footer a:hover {
-  color: gray-darker;
-}
-/* line 64, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
-footer ul {
-  float: right;
-  list-style: none;
-}
-/* line 67, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
-footer ul li {
-  float: left;
-  margin-left: 15px;
-}
-
-/* line 74, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
+/* line 50, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
 body {
   background-color: #171a1e;
 }
 
-/* line 78, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
-h1.team-h1 {
+/* line 54, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
+body.team {
+  /* code for phone layout */
+}
+/* line 56, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
+body.team section.team-container {
+  border: none;
+}
+/* line 59, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
+body.team h1.team-h1 {
   text-align: center;
   left: 40%;
   padding: 0px 20px;
   color: #fff;
 }
-
-/* line 86, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
-.team-container {
+/* line 67, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
+body.team .team-container {
   max-width: 1000px;
   max-height: 100vh;
   margin-top: 40px;
@@ -9193,47 +9042,39 @@ h1.team-h1 {
   padding-bottom: 3em;
   position: relative;
 }
-
-/* line 98, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
-.team-member {
+/* line 79, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
+body.team .team-member {
   width: 18%;
   float: left;
   text-align: center;
   margin-right: 5%;
 }
-
-/* line 105, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
-.team-member:last-child {
+/* line 86, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
+body.team .team-member:last-child {
   margin-right: 0;
 }
-
-/* line 108, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
-.team-member h3 {
+/* line 89, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
+body.team .team-member h3 {
   color: #1CA3A3;
 }
-
-/* line 112, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
-.email {
+/* line 93, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
+body.team .email {
   color: #EA2678;
 }
-
-/* line 117, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
-.team-member span {
+/* line 98, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
+body.team .team-member span {
   display: block;
 }
-
-/* line 121, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
-.team-member a {
+/* line 102, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
+body.team .team-member a {
   text-decoration: none;
 }
-
-/* line 125, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
-.team-member a:hover {
+/* line 106, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
+body.team .team-member a:hover {
   color: #fff;
 }
-
-/* line 130, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
-.team-photo {
+/* line 111, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
+body.team .team-photo {
   border-radius: 50%;
   text-align: center;
   margin: auto;
@@ -9241,53 +9082,44 @@ h1.team-h1 {
   height: auto;
   transition: 0.1s transform ease-in-out;
 }
-
-/* line 140, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
-.team-photo:hover {
+/* line 121, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
+body.team .team-photo:hover {
   transform: scale(0.9);
   border: 5px solid white;
 }
-
-/* line 145, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
-#hover1 {
+/* line 126, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
+body.team #hover1 {
   display: none;
 }
-
-/* line 148, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
-.team-photo:hover + #hover1 {
+/* line 129, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
+body.team .team-photo:hover + #hover1 {
   display: block;
-  color: green;
+  color: #0FAEE8;
   font-size: 1.8rem;
 }
-
-/* line 154, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
-#hover2 {
+/* line 135, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
+body.team #hover2 {
   display: none;
 }
-
-/* line 157, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
-.team-photo:hover + #hover2 {
+/* line 138, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
+body.team .team-photo:hover + #hover2 {
   display: block;
-  color: pink;
+  color: #FF2A93;
   font-size: 1.8rem;
 }
-
-/* line 163, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
-#hover3 {
+/* line 144, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
+body.team #hover3 {
   display: none;
 }
-
-/* line 166, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
-.team-photo:hover + #hover3 {
+/* line 147, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
+body.team .team-photo:hover + #hover3 {
   display: block;
-  color: tomato;
+  color: #FF6322;
   font-size: 1.8rem;
 }
-
-/* code for phone layout */
 @media (min-width: 650px) {
-  /* line 173, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
-  .team-member {
+  /* line 154, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
+  body.team .team-member {
     width: 25%;
     margin-left: 4%;
     margin-right: 4%;
@@ -9295,24 +9127,23 @@ h1.team-h1 {
   }
 }
 @media (max-width: 649px) {
-  /* line 184, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
-  .team-member {
+  /* line 165, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
+  body.team .team-member {
     float: none;
     display: inline-block;
     margin: 50px auto;
     width: 100%;
     text-align: center;
   }
-
-  /* line 192, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
-  .team-member h3,
-  .team-member span {
+  /* line 173, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/custom.css.scss */
+  body.team .team-member h3,
+  body.team .team-member span {
     margin: 15px auto;
   }
 }
 
 #navbar{
-  overflow:hidden;
+    overflow:hidden;
     width:200px;
     height:100%;
     position:fixed;
@@ -9328,8 +9159,9 @@ h1.team-h1 {
     left: -110px;
     width: 160px;
     height: 100%;
-    background:rgba(43,150,182,.33);
+    /*background:#424E4F;*/
     z-index:500;
+    /*border: 1px solid white;*/
 }
 #primary_nav ul{
     display: block;
@@ -9361,7 +9193,7 @@ h1.team-h1 {
   transition: all 0.2s ease;
 }
 #mobile_nav{
-    font-size:36px;
+    font-size:30px;
     position: relative;
     display: inline-block;
     top:10px;
@@ -9372,6 +9204,341 @@ h1.team-h1 {
 }
 #mobile_nav:hover{
     color: #434244;
+}
+/* line 3, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/losMatch.css.scss */
+body.losMatch h1 {
+  color: #fff;
+}
+/* line 7, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/losMatch.css.scss */
+body.losMatch .container {
+  text-align: center;
+}
+/* line 10, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/losMatch.css.scss */
+body.losMatch h1 {
+  color: rgba(255, 255, 255, 0.4);
+}
+/* line 14, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/losMatch.css.scss */
+body.losMatch #thumbsUp i {
+  color: #fff;
+}
+/* line 17, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/losMatch.css.scss */
+body.losMatch #hover1 {
+  display: none;
+}
+/* line 20, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/losMatch.css.scss */
+body.losMatch .thumIcon:hover {
+  transform: scale(1);
+  bottom: -2%;
+  transition: transform .2s, opacity .2s;
+  font-size: 6em;
+}
+/* line 25, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/losMatch.css.scss */
+body.losMatch .thumIcon:hover.thumIcon:hover + #hover1 {
+  display: block;
+  color: #FF530D;
+  text-decoration: none;
+  font-size: 1.8rem;
+}
+/* line 33, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/losMatch.css.scss */
+body.losMatch div {
+  text-align: center;
+}
+/* line 37, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/losMatch.css.scss */
+body.losMatch .search-container {
+  float: right;
+  overflow: hidden;
+  height: 4em;
+  width: 4em;
+  border-radius: 2em;
+  box-shadow: 0 0 5px #6A5D4F;
+  -moz-transition: all 0.35s;
+  -webkit-transition: all 0.35s;
+  margin-right: 3em;
+}
+/* line 48, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/losMatch.css.scss */
+body.losMatch .search-container:hover {
+  width: 25em;
+  border-radius: 5px 2em 2em 5px;
+}
+/* line 52, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/losMatch.css.scss */
+body.losMatch .search-container:hover input {
+  display: inline-block;
+  width: 19em;
+  padding: 10px;
+}
+/* line 58, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/losMatch.css.scss */
+body.losMatch input {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  float: left;
+  width: 0em;
+  height: 2em;
+  margin: 1em;
+  margin-right: -4.5em;
+  background: #fff;
+  color: #6A5D4F;
+  font-size: 1em;
+  font-weight: 600;
+  padding: 0px;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2) inset;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+  -moz-transition: all 0.25s;
+  -webkit-transition: all 0.25s;
+}
+/* line 79, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/losMatch.css.scss */
+body.losMatch input:focus {
+  outline: none;
+  box-shadow: 0 -1px 1px rgba(255, 255, 255, 0.25), 0 1px 5px rgba(0, 0, 0, 0.15);
+}
+/* line 84, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/losMatch.css.scss */
+body.losMatch .button {
+  float: right;
+  width: 1.75em;
+  height: 1.75em;
+  margin: 0.125em;
+  background: tomato;
+  text-align: center;
+  font-size: 2em;
+  color: #FDF6E3;
+  border-radius: 50%;
+  box-shadow: 0 -1px 1px rgba(255, 255, 255, 0.25), 0 1px 1px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 -2px 1px rgba(0, 0, 0, 0.3);
+}
+/* line 97, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/losMatch.css.scss */
+body.losMatch .button i {
+  margin-top: 0.3em;
+}
+/* line 100, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/losMatch.css.scss */
+body.losMatch .button:active {
+  border: 0 !important;
+  text-shadow: 0 0 0;
+}
+/* line 105, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/losMatch.css.scss */
+body.losMatch p.name {
+  color: #2a2b39;
+  font-weight: 400;
+  font-size: 2.2em;
+  text-align: center;
+  font-family: Georgia, serif;
+  margin: 0;
+}
+/* line 114, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/losMatch.css.scss */
+body.losMatch #jobT {
+  margin: 0;
+}
+/* line 116, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/losMatch.css.scss */
+body.losMatch #jobT > span {
+  color: #fff;
+  font-size: 1.2em;
+}
+/* line 122, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/losMatch.css.scss */
+body.losMatch #companyN {
+  margin: 0;
+}
+/* line 124, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/losMatch.css.scss */
+body.losMatch #companyN > span {
+  color: #fff;
+  font-size: 1.2em;
+}
+/* line 129, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/losMatch.css.scss */
+body.losMatch input {
+  border: solid 1px #ccc;
+  border-radius: 5px;
+  padding: 7px 14px;
+  margin-bottom: 10px;
+}
+/* line 136, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/losMatch.css.scss */
+body.losMatch .twitter > i {
+  margin-right: 4px;
+}
+/* line 139, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/losMatch.css.scss */
+body.losMatch .linkedin > i {
+  margin-right: 4px;
+}
+/* line 142, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/losMatch.css.scss */
+body.losMatch .phone > i {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+/* line 146, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/losMatch.css.scss */
+body.losMatch .email > i {
+  margin-right: 4px;
+}
+/* line 154, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/losMatch.css.scss */
+body.losMatch #back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 230px;
+  width: 450px;
+  -moz-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  -moz-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  -moz-box-shadow: 0 5px 30px rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 0 5px 30px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.7);
+  padding: 30px 10px;
+  font-size: 2em;
+  text-align: justify;
+  background-color: #D3CBBD;
+  border-radius: 5px;
+}
+/* line 183, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/losMatch.css.scss */
+body.losMatch #front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 450px;
+  height: 230px;
+  background: #456F74;
+  padding-top: 1px;
+  -moz-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  -moz-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+}
+/* line 207, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/losMatch.css.scss */
+body.losMatch #card {
+  margin: 30px auto 0;
+  position: relative;
+  width: 400px;
+  height: 230px;
+  cursor: pointer;
+  -moz-perspective: 600px;
+  -webkit-perspective: 600px;
+  perspective: 600px;
+}
+/* line 218, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/losMatch.css.scss */
+body.losMatch #card:hover #front {
+  -moz-transform: rotateY(50deg);
+  -webkit-transform: rotateY(50deg);
+  transform: rotateY(50deg);
+}
+/* line 224, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/losMatch.css.scss */
+body.losMatch #card:hover #back {
+  -moz-transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+}
+/* line 230, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/losMatch.css.scss */
+body.losMatch .logo {
+  display: inline-block;
+  background: #6acd79;
+  color: #fff;
+  z-index: 11;
+  padding: .16em;
+  border: 8px solid #fff;
+  position: relative;
+  pointer-events: none;
+  margin-top: .2em;
+  font-size: 4em;
+}
+/* line 241, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/losMatch.css.scss */
+body.losMatch .logo .fat {
+  font-weight: 600;
+}
+/* line 244, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/losMatch.css.scss */
+body.losMatch .logo .skinny {
+  font-weight: 100;
+}
+/* line 249, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/losMatch.css.scss */
+body.losMatch .elName {
+  margin-top: -.8em;
+  color: #2a2b39;
+  font-weight: 400;
+  font-size: 1.1em;
+  text-align: center;
+  position: relative;
+  text-transform: capitalize;
+}
+/* line 259, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/losMatch.css.scss */
+body.losMatch .introduction {
+  text-align: center;
+  color: #2a2b39;
+  font-family: 'Old Standard TT', serif;
+  font-style: italic;
+}
+/* line 266, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/losMatch.css.scss */
+body.losMatch .jobandcompany {
+  margin-top: -.5em;
+  color: #fff;
+}
+/* line 270, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/losMatch.css.scss */
+body.losMatch .list {
+  font-family: sans-serif;
+  margin: 0;
+  margin-bottom: 50px;
+}
+/* line 275, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/losMatch.css.scss */
+body.losMatch .list > li {
+  display: block;
+  padding: 10px;
+  box-shadow: inset 0 1px 0 #fff;
+  text-transform: capitalize;
+}
+#startSession {
+
+}
+
+#textchat {
+    position: relative;
+    width: 100%;
+    float: right;
+    right: 0;
+    height: 100%;
+    background-color: white;
+}
+
+#history {
+   width: 100%;
+   height: calc(100% - 40px);
+   overflow: auto;
+}
+
+input#msgTxt {
+  height: 40px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+#history .mine {
+    color: #00FF00;
+    text-align: right;
+    margin-right: 10px;
+}
+
+#history .theirs {
+    color: #00FFFF;
+    margin-left: 10px;
+}
+
+#textChat button span {
+  background-color: red;
+
 }
 /* line 1, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/signin.css.scss */
 body .elSign {
@@ -9562,52 +9729,42 @@ body .elSign .vhide {
   color: #AAA;
   font-weight: 400;
 }
-/* line 6, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/static_pages.scss */
+/* line 5, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/static_pages.scss */
 body.home {
-  background-color: #171a1e;
-  position: static;
   height: 100vh;
 }
-/* line 10, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/static_pages.scss */
-body.home h5 {
-  color: #fff;
-}
-/* line 12, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/static_pages.scss */
+/* line 7, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/static_pages.scss */
 body.home h1 {
-  color: #fff;
+  color: rgba(255, 255, 255, 0.4);
 }
 
-/* line 17, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/static_pages.scss */
+/* line 12, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/static_pages.scss */
 body.about {
   height: 100vh;
-  margin: 0;
+  padding: 10%;
   background: #171a1e;
   font-family: georgia;
   color: #fff;
   text-shadow: 0 1px 0 #333;
 }
-/* line 24, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/static_pages.scss */
+/* line 19, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/static_pages.scss */
 body.about h1, body.about h2, body.about h3, body.about h4, body.about h5 {
   text-align: center;
   font-family: Georgia;
 }
-/* line 29, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/static_pages.scss */
+/* line 24, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/static_pages.scss */
 body.about p {
   text-align: center;
 }
-/* line 32, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/static_pages.scss */
+/* line 27, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/static_pages.scss */
 body.about .quote {
   padding: 10px 10%;
 }
-/* line 35, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/static_pages.scss */
+/* line 30, /Users/henryarbolaez/Desktop/tim copy/test1/WebSakes/app/assets/stylesheets/static_pages.scss */
 body.about .wrapper {
   padding: 0%;
-  padding-top: 0;
-  margin: 0px 5% 0;
-  margin-top: 30px;
+  margin-top: -2%;
   border: 2px solid rgba(255, 255, 255, 0.4);
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 6px;
   box-shadow: 0 15px 20px -12px rgba(0, 0, 0, 0.5);
 }
 /*
@@ -9625,10 +9782,6 @@ body.about .wrapper {
 
 
  */
-
-/*html {
-    height: 100vh;
-}*/
 
 
 
