@@ -1,7 +1,10 @@
 clicking = function(){
-
+  for (i = 0; i < '<%= #of matches %> '; i ++) {
+  $('#AddIds').append('<span class = "startSession id ="ID'+ i +'" data-session = "<%= match.session_id %>" data-token= "<%= match.token%>">')
+  }
  // var session = OT.initSession(apiKey, sessionID);
 
+<<<<<<< HEAD
  // for (i =0; i < combined_matches.length ; i++) {
 
 
@@ -11,6 +14,10 @@ clicking = function(){
    var sessionID = this.getAttribute("data-session");
    var token = this.getAttribute("data-token");
    console.log("session started");
+=======
+ $('#startSession').on('click', function (){
+   console.log(this.getAttribute("data-session"));
+>>>>>>> feature/video_chat_targets
    var session = OT.initSession(apiKey, sessionID);
    session.connect(token, function(error) {
      if (error) {
