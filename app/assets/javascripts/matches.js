@@ -31,7 +31,6 @@ clicking = function(){
       insertMode: 'append',
       width: 400,
       height: 300,
-      margin-right: 20
   });
 });
 
