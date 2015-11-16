@@ -17,8 +17,8 @@
 //= require_tree .
 
 
-
 $(document).on('ready page:load', function () {
+
   $(".toggleNav").click(function () {
       $("#subnav").toggleClass("active");
       $(".toggleNavButton").toggleClass("active");
@@ -42,9 +42,12 @@ $(document).on('ready page:load', function () {
     }
 
   });
-    var monkeyList = new List('test-list', {
+
+    var options = {
       valueNames: ['name'],
       plugins: [ ListFuzzySearch() ]
-    });
+    };
+    var monkeyList = new List('test-list', options);
+
 
 });
