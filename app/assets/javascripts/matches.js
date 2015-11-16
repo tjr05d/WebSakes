@@ -14,7 +14,7 @@ clicking = function(){
      // This example assumes that a DOM element with the ID 'publisherElement' exists
        $('#startChat').on('click', function() {
         //  $('#myModal').modal('show');
-       var publisherProperties = {insertMode: 'replace', width: 300, height:200, name:"Tim's stream"};
+       var publisherProperties = {insertMode: 'replace', width: 400, height:300, name:"Tim's stream"};
 
        publisher = OT.initPublisher('publisherElement', publisherProperties);
 
