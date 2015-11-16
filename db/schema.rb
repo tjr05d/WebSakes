@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20151114004353) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "comments", ["event_id"], name: "index_comments_on_event_id"
+  add_index "comments", ["event_id"], name: "index_comments_on_event_id", using: :btree
 
   create_table "events", force: :cascade do |t|
     t.string   "title"
@@ -60,4 +60,5 @@ ActiveRecord::Schema.define(version: 20151114004353) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
+  add_foreign_key "comments", "events"
 end
