@@ -15,16 +15,15 @@ class MatchesController < ApplicationController
   def losMatch
     @now_user = current_user
     @combined_matches = Match.combined_matches(@now_user)
-    @api_key = '45406182'
-    @api_secret = "ee066de80ac21bf1237fb6fdd595127a1d6e8ac7"
+    @api_key = ENV['APIKEY']
+    @api_secret = ENV['APISECRET']
 
 
   end
 
-
   def create
-    @api_key = '45406182'
-    @api_secret = "ee066de80ac21bf1237fb6fdd595127a1d6e8ac7"
+    @api_key = ENV['APIKEY']
+    @api_secret = ENV['APISECRET']
 
     @opentok = OpenTok::OpenTok.new @api_key, @api_secret
     @session = @opentok.create_session :media_mode => :routed
