@@ -8,6 +8,7 @@ gem 'bootstrap-sass'
 gem 'sass-rails',           '5.0.3'
 gem 'searchkick'
 # gem 'nodejs-rails', '~> 0.0.1'
+gem 'dotenv-rails', :groups => [:development, :test]
 
 gem 'gravatar_image_tag'
 
